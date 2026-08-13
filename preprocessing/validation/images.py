@@ -345,8 +345,8 @@ def _decode_code(exc: ImageError) -> RejectionCode:
     message = exc.message.lower()
     if "truncat" in message or "ends prematurely" in message or "not enough image data" in message:
         return RejectionCode.TRUNCATED_FILE
-    if "not a recognised image" in message:
-        return RejectionCode.UNSUPPORTED_FORMAT
+    # An unidentifiable file is a decode failure, not a format-policy violation:
+    # UNSUPPORTED_FORMAT is reserved for codecs we recognise but do not allow.
     return RejectionCode.DECODE_FAILED
 
 

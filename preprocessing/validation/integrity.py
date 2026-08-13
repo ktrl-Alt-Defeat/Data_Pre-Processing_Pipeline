@@ -14,7 +14,7 @@ from __future__ import annotations
 from collections import Counter, defaultdict
 from dataclasses import dataclass, field
 from pathlib import Path
-from typing import Any, Mapping, Sequence
+from typing import Any, Callable, Mapping, Sequence
 
 from ..core.config import IntegrityValidationConfig
 from ..core.context import RunContext
@@ -22,6 +22,9 @@ from ..core.io import read_json
 from ..core.records import Corpus, ImageRecord, RejectionCode, Severity
 
 VALIDATOR = "integrity"
+
+# Records paired with their position in ``corpus.records``.
+Indexed = Sequence[tuple[int, "ImageRecord"]]
 
 
 @dataclass(frozen=True, slots=True)

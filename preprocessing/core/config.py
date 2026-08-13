@@ -11,6 +11,7 @@ the run at load time instead of silently disabling a gate.
 
 from __future__ import annotations
 
+import copy
 import os
 from pathlib import Path
 from typing import Any, Literal, Mapping, MutableMapping, Sequence
@@ -234,13 +235,17 @@ class BlurConfig(_Section):
     enabled: bool = True
     method: Literal["laplacian", "tenengrad"] = "laplacian"
     min_score: float = Field(80.0, ge=0)
-    metric_resize: int = Field(512, ge=32, description="Longest side used for the metric, so scores are resolution-invariant")
 
 
 class BrightnessConfig(_Section):
     enabled: bool = True
     min_mean: float = Field(25.0, ge=0, le=255)
     max_mean: float = Field(235.0, ge=0, le=255)
+    shadow_level: float = Field(16.0, ge=0, le=255, description="Pixels at or below this count as crushed shadows")
+    highlight_level: float = Field(240.0, ge=0, le=255)
+    max_clipped_fraction: float | None = Field(
+        None, ge=0, le=1, description="Reject when clipped shadow+highlight pixels exceed this share"
+    )
 
 
 class ContrastConfig(_Section):
@@ -253,7 +258,10 @@ class ResolutionConfig(_Section):
     enabled: bool = True
     min_width: int = Field(64, ge=1)
     min_height: int = Field(64, ge=1)
+    max_width: int | None = Field(None, ge=1)
+    max_height: int | None = Field(None, ge=1)
     min_megapixels: float | None = None
+    max_megapixels: float | None = None
     min_aspect_ratio: float = Field(0.25, gt=0)
     max_aspect_ratio: float = Field(4.0, gt=0)
 
@@ -268,6 +276,8 @@ class DuplicateConfig(_Section):
     max_hamming_distance: int = Field(5, ge=0)
     keep: Literal["first", "highest_quality", "largest"] = "highest_quality"
     across_classes: bool = Field(True, description="Also compare images from different labels")
+    exact_action: Literal["reject", "warn", "keep"] = "reject"
+    near_action: Literal["reject", "warn", "keep"] = "reject"
 
 
 class QualityScoringConfig(_Section):
@@ -276,9 +286,14 @@ class QualityScoringConfig(_Section):
         default_factory=lambda: {"blur": 0.4, "brightness": 0.2, "contrast": 0.25, "resolution": 0.15}
     )
     min_score: float = Field(0.35, ge=0, le=1)
+    warn_score: float = Field(0.55, ge=0, le=1, description="Scores below this are accepted with a warning")
     reference_blur: float = Field(400.0, gt=0, description="Blur score mapped to 1.0 when normalising")
     reference_contrast: float = Field(70.0, gt=0)
     reference_megapixels: float = Field(0.25, gt=0)
+    grade_thresholds: dict[str, float] = Field(
+        default_factory=lambda: {"A": 0.85, "B": 0.70, "C": 0.55, "D": 0.40}
+    )
+    fallback_grade: str = "F"
 
     @field_validator("weights")
     @classmethod
@@ -287,10 +302,27 @@ class QualityScoringConfig(_Section):
             raise ValueError("quality scoring weights must be non-negative and sum to a positive value")
         return value
 
+    @field_validator("grade_thresholds")
+    @classmethod
+    def _grades_in_range(cls, value: dict[str, float]) -> dict[str, float]:
+        if not value or any(not 0 <= score <= 1 for score in value.values()):
+            raise ValueError("grade thresholds must be non-empty and within [0, 1]")
+        return value
+
+    @model_validator(mode="after")
+    def _warn_above_reject(self) -> "QualityScoringConfig":
+        if self.warn_score < self.min_score:
+            raise ValueError("scoring.warn_score must not be below scoring.min_score")
+        return self
+
 
 class QualityConfig(_Section):
     enabled: bool = True
     reject_on_failure: bool = True
+    metric_resize: int = Field(
+        512, ge=32, description="Longest side of the single decoded array every pixel metric is computed from"
+    )
+    workers: int | None = Field(None, ge=1, description="Analysis threads; defaults to execution.workers")
     blur: BlurConfig = Field(default_factory=BlurConfig)
     brightness: BrightnessConfig = Field(default_factory=BrightnessConfig)
     contrast: ContrastConfig = Field(default_factory=ContrastConfig)
@@ -302,6 +334,60 @@ class QualityConfig(_Section):
 # --------------------------------------------------------------------------- #
 # Analysis
 # --------------------------------------------------------------------------- #
+
+
+class RgbProfilingConfig(_Section):
+    enabled: bool = True
+    sample_size: int | None = Field(
+        4000, ge=1, description="Images sampled for channel statistics; null profiles the whole corpus"
+    )
+    resize: int = Field(256, ge=16, description="Longest side each sampled image is reduced to before accumulation")
+    histogram_bins: int = Field(64, ge=8, le=256)
+    workers: int | None = Field(None, ge=1)
+    cache: bool = Field(True, description="Reuse results keyed by dataset fingerprint")
+
+
+class ProfilingConfig(_Section):
+    enabled: bool = True
+    include_rejected: bool = Field(False, description="Profile the benchmark-ready corpus only, by default")
+    histogram_bins: int = Field(40, ge=5, le=200)
+    percentiles: tuple[float, ...] = (0.05, 0.25, 0.5, 0.75, 0.95)
+    top_classes: int = Field(50, ge=1, description="Classes listed individually in reports")
+    top_resolutions: int = Field(25, ge=1)
+    rgb: RgbProfilingConfig = Field(default_factory=RgbProfilingConfig)
+
+    @field_validator("percentiles")
+    @classmethod
+    def _percentiles_in_range(cls, value: tuple[float, ...]) -> tuple[float, ...]:
+        if not value or any(not 0 < item < 1 for item in value):
+            raise ValueError("percentiles must be non-empty and strictly between 0 and 1")
+        return tuple(sorted(value))
+
+
+class DatasetScoreConfig(_Section):
+    enabled: bool = True
+    weights: dict[str, float] = Field(
+        default_factory=lambda: {
+            "class_balance": 0.25,
+            "duplicate_ratio": 0.15,
+            "diversity": 0.15,
+            "quality_score": 0.2,
+            "label_consistency": 0.1,
+            "resolution_consistency": 0.05,
+            "source_diversity": 0.1,
+        }
+    )
+    grade_thresholds: dict[str, float] = Field(
+        default_factory=lambda: {"A": 0.85, "B": 0.70, "C": 0.55, "D": 0.40}
+    )
+    fallback_grade: str = "F"
+
+    @field_validator("weights")
+    @classmethod
+    def _weights_positive(cls, value: dict[str, float]) -> dict[str, float]:
+        if not value or any(weight < 0 for weight in value.values()) or sum(value.values()) <= 0:
+            raise ValueError("dataset score weights must be non-negative and sum to a positive value")
+        return value
 
 
 class ImbalanceConfig(_Section):
@@ -329,10 +415,12 @@ class LeakageConfig(_Section):
 
 
 class AnalysisConfig(_Section):
+    enabled: bool = True
     imbalance: ImbalanceConfig = Field(default_factory=ImbalanceConfig)
     diversity: DiversityConfig = Field(default_factory=DiversityConfig)
     bias: BiasConfig = Field(default_factory=BiasConfig)
     leakage: LeakageConfig = Field(default_factory=LeakageConfig)
+    score: DatasetScoreConfig = Field(default_factory=DatasetScoreConfig)
 
 
 # --------------------------------------------------------------------------- #
@@ -530,6 +618,7 @@ class Config(_Section):
     corpus: CorpusConfig = Field(default_factory=CorpusConfig)
     validation: ValidationConfig = Field(default_factory=ValidationConfig)
     quality: QualityConfig = Field(default_factory=QualityConfig)
+    profiling: ProfilingConfig = Field(default_factory=ProfilingConfig)
     analysis: AnalysisConfig = Field(default_factory=AnalysisConfig)
     split: SplitConfig = Field(default_factory=SplitConfig)
     transforms: TransformsConfig = Field(default_factory=TransformsConfig)
@@ -597,6 +686,11 @@ def load_config(
     raw = _merge_includes(raw, config_path.parent)
     _apply_overrides(raw, _env_overrides())
     _apply_overrides(raw, _normalize_overrides(overrides))
+
+    # Path resolution rewrites the document in place. Deep-copy first so that
+    # nested structures supplied by the caller (a reused `sources` list, say)
+    # are never mutated and repeated loads stay independent.
+    raw = copy.deepcopy(raw)
     raw.setdefault("project_root", str(root))
     _resolve_source_paths(raw, root)  # must precede _resolve_paths: sources anchor on raw_root
     _resolve_paths(raw, root)

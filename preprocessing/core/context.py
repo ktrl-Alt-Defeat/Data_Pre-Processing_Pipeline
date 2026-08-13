@@ -116,6 +116,10 @@ class OutputLayout:
         return self.reports_dir / "preprocessing_report.pdf"
 
     @property
+    def analysis_report(self) -> Path:
+        return self.reports_dir / "analysis_report.html"
+
+    @property
     def preprocessing_summary(self) -> Path:
         return self.reports_dir / "preprocessing_summary.json"
 

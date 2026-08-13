@@ -131,8 +131,7 @@ def validate_corpus(config: Config, context: RunContext, corpus: Corpus) -> Vali
                 "integrity": integrity_validator.metrics,
             },
         )
-        artifacts = _write_artifacts(config, context, corpus, report)
-        report = _with_artifacts(report, artifacts)
+        report = _write_artifacts(config, context, corpus, report)
         _record_stage_metrics(tracker, report)
 
     return report
@@ -265,19 +264,18 @@ def _apply_issues(record: ImageRecord, issues: Iterable[ValidationIssue], tracke
 
 
 def _apply_integrity_issues(corpus: Corpus, issues: Sequence[IntegrityIssue], tracker: StageTracker) -> None:
-    index = corpus.index()
     for issue in issues:
         if not issue.is_error:
             tracker.warn("integrity.warning", check=issue.check, message=issue.message, **dict(issue.detail))
             continue
 
-        if not issue.image_ids:
+        if not issue.record_indices:
             tracker.error("integrity.failed", check=issue.check, message=issue.message)
             continue
 
-        for image_id in issue.image_ids:
-            record = index.get(image_id)
-            if record is None or record.is_rejected:
+        for position in issue.record_indices:
+            record = corpus.records[position]
+            if record.is_rejected:
                 continue
             record.reject(
                 _STAGE,
@@ -351,33 +349,35 @@ def _validation_rejection(record: ImageRecord) -> Rejection | None:
     return next((r for r in record.rejections if r.stage is _STAGE), None)
 
 
-def _write_artifacts(config: Config, context: RunContext, corpus: Corpus, report: ValidationReport) -> dict[str, str]:
-    """Write validation artefacts and refresh the metadata tables with new statuses."""
+def _write_artifacts(config: Config, context: RunContext, corpus: Corpus, report: ValidationReport) -> ValidationReport:
+    """Write validation artefacts and refresh the metadata tables with new statuses.
+
+    The report JSON is written last so that the on-disk document lists the
+    artefacts that accompany it.
+    """
     directory = ensure_dir(Path(config.validation.output_dir))
     frame = build_frame(corpus)
 
     accepted_path = directory / "accepted_images.csv"
     rejected_path = directory / "rejected_images.csv"
+    report_path = directory / "validation_report.json"
     rejected_mask = frame["rejected"].fillna(False).astype(bool)
     frame[~rejected_mask].to_csv(accepted_path, index=False, encoding="utf-8")
     frame[rejected_mask].to_csv(rejected_path, index=False, encoding="utf-8")
-    report_path = write_json(directory / "validation_report.json", report.as_dict())
 
     writer = MetadataWriter(context.layout, config)
-    metadata_path = writer.write_csv(frame)
     artifacts = {
         "validation_report": str(report_path),
         "accepted_images": str(accepted_path),
         "rejected_images": str(rejected_path),
-        "metadata_csv": str(metadata_path),
+        "metadata_csv": str(writer.write_csv(frame)),
     }
     if config.packaging.manifest_parquet:
         artifacts["image_manifest"] = str(writer.write_parquet(frame))
-    return artifacts
 
-
-def _with_artifacts(report: ValidationReport, artifacts: dict[str, str]) -> ValidationReport:
-    return dataclasses.replace(report, artifacts=artifacts)
+    completed = dataclasses.replace(report, artifacts=artifacts)
+    write_json(report_path, completed.as_dict())
+    return completed
 
 
 def _record_stage_metrics(tracker: StageTracker, report: ValidationReport) -> None:

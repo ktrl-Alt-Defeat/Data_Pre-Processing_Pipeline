@@ -158,7 +158,25 @@ validation:
     check_fingerprint: true
     check_manifest: true
 
+# Read-only profiling. Statistics come from the manifest; only the RGB pass
+# touches pixels, and it samples and caches by dataset fingerprint.
+profiling:
+  enabled: true
+  include_rejected: false         # profile the benchmark-ready corpus only
+  histogram_bins: 40
+  percentiles: [0.05, 0.25, 0.5, 0.75, 0.95]
+  top_classes: 50
+  top_resolutions: 25
+  rgb:
+    enabled: true
+    sample_size: 4000             # null profiles every image
+    resize: 256
+    histogram_bins: 64
+    workers: null
+    cache: true
+
 analysis:
+  enabled: true
   imbalance:
     rare_class_ratio: 0.25        # class is "rare" below 25% of the mean class size
     min_class_size: 20
@@ -175,6 +193,24 @@ analysis:
     check_exact: true
     check_near: true
     max_hamming_distance: 3
+  score:
+    enabled: true
+    # Components are each normalised to [0, 1]; weights are normalised internally,
+    # so a component that cannot be measured simply drops out of the average.
+    weights:
+      class_balance: 0.25
+      duplicate_ratio: 0.15
+      diversity: 0.15
+      quality_score: 0.20
+      label_consistency: 0.10
+      resolution_consistency: 0.05
+      source_diversity: 0.10
+    grade_thresholds:
+      A: 0.85
+      B: 0.70
+      C: 0.55
+      D: 0.40
+    fallback_grade: F
 
 dataloader:
   batch_size: 32

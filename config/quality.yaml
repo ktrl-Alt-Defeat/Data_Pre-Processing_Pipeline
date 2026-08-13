@@ -1,23 +1,32 @@
 # =============================================================================
-# Quality gate thresholds. Merged into the root config under `quality`.
+# Quality gate. Merged into the root config under `quality`.
 #
-# Every rejection produced here carries the failing metric and threshold, so
-# `analytics/quality_metrics.csv` always explains why an image was dropped.
+# Every rejection produced here carries the failing metric, its measured value
+# and the threshold it violated, so `analytics/quality_metrics.csv` always
+# explains why an image was dropped.
+#
+# All pixel metrics are computed from ONE decode per image, downscaled to
+# `metric_resize`, which keeps scores comparable between a 6000px photograph
+# and a 300px thumbnail.
 # =============================================================================
 
 enabled: true
 reject_on_failure: true   # false -> measure and report only, reject nothing
+metric_resize: 512        # longest side of the array every pixel metric uses
+workers: null             # analysis threads; null -> execution.workers
 
 blur:
   enabled: true
   method: laplacian       # laplacian | tenengrad
-  min_score: 80.0         # variance of the Laplacian
-  metric_resize: 512      # longest side used for the metric (resolution-invariant scores)
+  min_score: 80.0         # variance of the Laplacian at metric_resize
 
 brightness:
   enabled: true
   min_mean: 25.0          # 0-255 mean luminance
   max_mean: 235.0
+  shadow_level: 16.0      # pixels at or below this count as crushed shadows
+  highlight_level: 240.0
+  max_clipped_fraction: null   # e.g. 0.4 rejects images that are 40% clipped
 
 contrast:
   enabled: true
@@ -28,7 +37,10 @@ resolution:
   enabled: true
   min_width: 64
   min_height: 64
+  max_width: null
+  max_height: null
   min_megapixels: null
+  max_megapixels: null
   min_aspect_ratio: 0.25
   max_aspect_ratio: 4.0
 
@@ -42,17 +54,27 @@ duplicates:
   max_hamming_distance: 5
   keep: highest_quality   # first | highest_quality | largest
   across_classes: true    # also compare images carrying different labels
+  exact_action: reject    # reject | warn | keep
+  near_action: reject
 
 scoring:
   enabled: true
-  # Weights are normalised internally; components are min-max mapped to [0, 1]
-  # against the reference values below.
+  # Components are normalised to [0, 1] against the reference values below and
+  # combined with these weights. Weights are normalised internally, so a
+  # component with no measurement simply drops out of the average.
   weights:
     blur: 0.4
     brightness: 0.2
     contrast: 0.25
     resolution: 0.15
-  min_score: 0.35
+  min_score: 0.35         # below this -> rejected
+  warn_score: 0.55        # below this -> accepted with a warning
   reference_blur: 400.0
   reference_contrast: 70.0
   reference_megapixels: 0.25
+  grade_thresholds:
+    A: 0.85
+    B: 0.70
+    C: 0.55
+    D: 0.40
+  fallback_grade: F

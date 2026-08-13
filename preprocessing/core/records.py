@@ -294,25 +294,103 @@ class ValidationIssue:
         }
 
 
+class MetricStatus(str, Enum):
+    """How a measured analytical metric compares against its configured threshold."""
+
+    OK = "ok"
+    WARNING = "warning"
+    CRITICAL = "critical"
+    INFORMATIONAL = "informational"
+
+
+@dataclass(frozen=True, slots=True)
+class Metric:
+    """One analytical finding, self-describing enough to print in a report.
+
+    Analysis output is only useful if a reader can tell what was measured, how,
+    against what threshold, and what to do about it, so every metric carries its
+    own definition, interpretation and recommendation.
+    """
+
+    key: str
+    name: str
+    definition: str
+    method: str
+    value: float | int | str | None
+    status: MetricStatus = MetricStatus.INFORMATIONAL
+    threshold: float | None = None
+    interpretation: str = ""
+    recommendation: str = ""
+    detail: Mapping[str, Any] = field(default_factory=dict)
+
+    @property
+    def healthy(self) -> bool:
+        return self.status in (MetricStatus.OK, MetricStatus.INFORMATIONAL)
+
+    def as_dict(self) -> dict[str, Any]:
+        return {
+            "key": self.key,
+            "name": self.name,
+            "definition": self.definition,
+            "method": self.method,
+            "value": self.value,
+            "threshold": self.threshold,
+            "status": self.status.value,
+            "interpretation": self.interpretation,
+            "recommendation": self.recommendation,
+            "detail": dict(self.detail),
+        }
+
+
+class DuplicateStatus(str, Enum):
+    """An image's standing within its duplicate cluster."""
+
+    UNIQUE = "unique"
+    REPRESENTATIVE = "representative"
+    EXACT_DUPLICATE = "exact_duplicate"
+    NEAR_DUPLICATE = "near_duplicate"
+
+
 @dataclass(slots=True)
 class QualityMetrics:
-    """Per-image quality measurements produced by the quality gate."""
+    """Per-image quality measurements produced by the quality gate.
+
+    ``blur_score`` is the raw sharpness metric that configured thresholds are
+    compared against; ``sharpness`` is the same quantity normalised to [0, 1]
+    for the weighted overall score.
+    """
 
     blur_score: float | None = None
+    sharpness: float | None = None
     brightness: float | None = None
     contrast: float | None = None
     colorfulness: float | None = None
     entropy: float | None = None
+    width: int | None = None
+    height: int | None = None
+    megapixels: float | None = None
+    aspect_ratio: float | None = None
+    duplicate_status: DuplicateStatus | None = None
+    perceptual_similarity: float | None = None
     score: float | None = None
+    grade: str | None = None
 
-    def as_dict(self, prefix: str = "") -> dict[str, float | None]:
+    def as_dict(self, prefix: str = "") -> dict[str, Any]:
         return {
             f"{prefix}blur_score": self.blur_score,
+            f"{prefix}sharpness": self.sharpness,
             f"{prefix}brightness": self.brightness,
             f"{prefix}contrast": self.contrast,
             f"{prefix}colorfulness": self.colorfulness,
             f"{prefix}entropy": self.entropy,
+            f"{prefix}width": self.width,
+            f"{prefix}height": self.height,
+            f"{prefix}megapixels": self.megapixels,
+            f"{prefix}aspect_ratio": self.aspect_ratio,
+            f"{prefix}duplicate_status": self.duplicate_status.value if self.duplicate_status else None,
+            f"{prefix}perceptual_similarity": self.perceptual_similarity,
             f"{prefix}score": self.score,
+            f"{prefix}grade": self.grade,
         }
 
     @property
@@ -700,8 +778,11 @@ class StageReport:
 
 __all__ = [
     "Corpus",
+    "DuplicateStatus",
     "ImageRecord",
     "LabelMapping",
+    "Metric",
+    "MetricStatus",
     "Operation",
     "PipelineStage",
     "Provenance",
