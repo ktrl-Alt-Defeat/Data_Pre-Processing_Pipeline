@@ -1,0 +1,68 @@
+# =============================================================================
+# Transform pipelines. Merged into the root config under `transforms`.
+#
+# Train applies augmentation; validation and inference are deterministic and
+# must stay identical to each other so offline metrics match served behaviour.
+# Sizes are [height, width].
+# =============================================================================
+
+interpolation: bilinear      # nearest | bilinear | bicubic | lanczos
+
+normalization:
+  source: imagenet           # imagenet | dataset (computed during profiling) | custom
+  mean: [0.485, 0.456, 0.406]
+  std: [0.229, 0.224, 0.225]
+
+train:
+  resize: [256, 256]
+  crop_size: [224, 224]
+
+  random_resized_crop:
+    enabled: false           # mutually exclusive with random_crop; takes precedence when enabled
+    scale: [0.7, 1.0]
+    ratio: [0.75, 1.333]
+
+  random_crop:
+    enabled: true
+    padding: 0
+    pad_if_needed: true
+
+  horizontal_flip:
+    enabled: true
+    p: 0.5
+
+  vertical_flip:
+    enabled: false
+    p: 0.0
+
+  rotation:
+    enabled: true
+    degrees: 15.0
+    expand: false
+
+  affine:
+    enabled: true
+    degrees: 0.0             # rotation is handled by the dedicated stage above
+    translate: [0.05, 0.05]
+    scale: [0.9, 1.1]
+    shear: 5.0
+
+  color_jitter:
+    enabled: true
+    brightness: 0.2
+    contrast: 0.2
+    saturation: 0.2
+    hue: 0.02
+
+  random_erasing:
+    enabled: false           # applied after normalization when enabled
+    p: 0.25
+    scale: [0.02, 0.15]
+
+validation:
+  resize: [256, 256]
+  center_crop: [224, 224]
+
+inference:
+  resize: [256, 256]
+  center_crop: [224, 224]

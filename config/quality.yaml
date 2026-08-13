@@ -1,0 +1,58 @@
+# =============================================================================
+# Quality gate thresholds. Merged into the root config under `quality`.
+#
+# Every rejection produced here carries the failing metric and threshold, so
+# `analytics/quality_metrics.csv` always explains why an image was dropped.
+# =============================================================================
+
+enabled: true
+reject_on_failure: true   # false -> measure and report only, reject nothing
+
+blur:
+  enabled: true
+  method: laplacian       # laplacian | tenengrad
+  min_score: 80.0         # variance of the Laplacian
+  metric_resize: 512      # longest side used for the metric (resolution-invariant scores)
+
+brightness:
+  enabled: true
+  min_mean: 25.0          # 0-255 mean luminance
+  max_mean: 235.0
+
+contrast:
+  enabled: true
+  method: std             # std | michelson | rms
+  min_value: 15.0
+
+resolution:
+  enabled: true
+  min_width: 64
+  min_height: 64
+  min_megapixels: null
+  min_aspect_ratio: 0.25
+  max_aspect_ratio: 4.0
+
+duplicates:
+  enabled: true
+  exact: true
+  exact_method: both      # content (file bytes) | pixel (decoded RGB) | both
+  near: true
+  hash_type: phash        # phash | dhash | ahash
+  hash_size: 8            # 8 -> 64-bit hash
+  max_hamming_distance: 5
+  keep: highest_quality   # first | highest_quality | largest
+  across_classes: true    # also compare images carrying different labels
+
+scoring:
+  enabled: true
+  # Weights are normalised internally; components are min-max mapped to [0, 1]
+  # against the reference values below.
+  weights:
+    blur: 0.4
+    brightness: 0.2
+    contrast: 0.25
+    resolution: 0.15
+  min_score: 0.35
+  reference_blur: 400.0
+  reference_contrast: 70.0
+  reference_megapixels: 0.25

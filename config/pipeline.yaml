@@ -1,0 +1,208 @@
+# =============================================================================
+# Root configuration for the crop-disease dataset preprocessing pipeline.
+#
+# Precedence (lowest to highest):
+#   included files  <  values below  <  CDP__* env vars  <  --set CLI overrides
+#
+# Path values are resolved against the project root; `sources[].path` is
+# resolved against `paths.raw_root`. Unknown keys are rejected at load time.
+# =============================================================================
+
+project: crop-disease-benchmark
+seed: 42
+
+include:
+  quality: quality.yaml
+  split: split.yaml
+  transforms: transforms.yaml
+
+paths:
+  raw_root: data/raw
+  corpus_dir: data/corpus
+  cache_dir: data/cache
+  processed_dir: data/processed
+  output_dir: outputs/preprocessed_dataset
+
+# Contributing datasets, each in folder-per-class layout.
+# Example of two heterogeneous sources:
+#
+# sources:
+#   - name: plantvillage
+#     path: PlantVillage            # -> data/raw/PlantVillage
+#     version: "1.0"
+#     class_depth: 1                # class folders sit directly under path
+#     priority: 10                  # wins when the same image appears twice
+#     metadata:
+#       license: CC0
+#       capture: controlled
+#   - name: field_survey_2024
+#     path: FieldSurvey2024/images  # class folders one level deeper
+#     version: "2024.03"
+#     detect_splits: true           # a leading train/ or test/ folder is the source's own split
+#     default_crop: tomato          # this source's labels carry no crop prefix
+#     label_overrides:
+#       Late Blight: tomato___late_blight
+#     metadata:
+#       license: CC-BY-4.0
+#       capture: in_field
+sources: []
+
+# Sources not listed above are ignored unless auto-discovery is switched on.
+# When enabled, each immediate sub-directory of `paths.raw_root` becomes a
+# source; the exclusion patterns keep backup and scratch folders out.
+discovery:
+  auto_discover: false
+  exclude_patterns: [".*", "_*", "*backup*", "*bak", "*tmp*", "*temp*", "*archive*"]
+  class_depth: 1
+  extensions: [".jpg", ".jpeg", ".png"]
+  version: unversioned
+
+stages:
+  validation: true
+  quality: true
+  profiling: true
+  analysis: true
+  splitting: true
+  packaging: true
+  dataloaders: true
+  reports: true
+  visualizations: true
+
+execution:
+  workers: 0            # 0 -> cpu_count() - 1
+  chunk_size: 64
+  progress: true
+  fail_fast: false
+  max_images: null      # global cap, useful for smoke runs
+  max_images_per_class: null
+
+logging:
+  level: INFO
+  console: true
+  console_level: INFO
+  json_file: true
+  directory: outputs/logs
+  filename_template: "run_{run_id}.jsonl"
+  capture_warnings: true
+
+corpus:
+  # Delimiters used to split raw folder names into crop and condition,
+  # e.g. "Tomato___Late_Blight" -> crop=tomato, condition=late_blight.
+  label_delimiters: ["___", "__"]
+  canonical_format: "{crop}___{condition}"
+  condition_only_format: "{condition}"    # used when no crop can be resolved
+  normalize_labels: true
+  lowercase_labels: true
+  label_aliases: {}       # raw or normalised label -> canonical label
+  alias_file: null        # optional YAML/JSON file with the same mapping
+  crops: []               # explicit crop vocabulary, extends whatever is inferred
+  infer_crop_vocabulary: true   # learn crops from delimited labels, then use them
+                                # to split undelimited ones (tomato_late_blight)
+  healthy_terms: ["healthy", "normal", "fresh"]
+  healthy_label: healthy
+  include_labels: []      # empty means "keep everything"
+  exclude_labels: []
+  min_images_per_class: 1
+  id_strategy: path       # path -> stable across re-encoding; content -> hash based
+  probe_dimensions: false # read image headers during ingestion (no pixel decode)
+  track_first_seen: true  # carry first_seen_run_id over from a previous corpus index
+  versioning:
+    scheme: semantic      # semantic | timestamp | fingerprint
+    version: "1.0.0"
+    bump_on_change: true
+
+# Structural verification. This stage never repairs, resizes or scores; it only
+# accepts, rejects with a structured reason, or warns.
+validation:
+  validate_images: true
+  allowed_extensions: [".jpg", ".jpeg", ".png"]
+  allowed_formats: ["jpeg", "png", "mpo"]
+  allowed_color_modes: []         # empty -> any mode that converts to RGB
+  full_decode: true               # decode every image to catch truncation
+  apply_exif_orientation: true
+  require_rgb_convertible: true
+  min_dimension: 2
+  max_pixels: 178956970           # decompression-bomb ceiling; null disables
+  max_file_size_mb: null
+  record_observations: true       # keep decoded dimensions so later stages need not decode again
+  workers: null                   # decode threads; null -> execution.workers
+  output_dir: data/processed/validation
+
+  labels:
+    enabled: true
+    pattern: "^[A-Za-z0-9][A-Za-z0-9_.\\-]*$"
+    max_length: 128
+    forbidden_characters: ["/", "\\", ":", "*", "?", "\"", "<", ">", "|"]
+    allow_whitespace: false
+    require_mapping: true
+    require_class_index: true
+
+  metadata:
+    enabled: true
+    required_provenance_fields:
+      ["dataset_name", "dataset_version", "source_root", "source_path",
+       "source_relpath", "source_class", "original_filename"]
+    require_timestamps: true
+    require_first_seen: true
+    validate_hashes: true
+    validate_paths: true
+    validate_dimensions: true
+
+  integrity:
+    enabled: true
+    check_duplicate_ids: true
+    check_duplicate_entries: true
+    check_missing_files: true
+    check_paths: true
+    check_provenance: true
+    check_fingerprint: true
+    check_manifest: true
+
+analysis:
+  imbalance:
+    rare_class_ratio: 0.25        # class is "rare" below 25% of the mean class size
+    min_class_size: 20
+    max_imbalance_ratio: 10.0
+  diversity:
+    enabled: true
+    sample_size: 2000
+    hash_bits: 64
+  bias:
+    enabled: true
+    max_source_share: 0.8         # warn when one source dominates a class
+  leakage:
+    enabled: true
+    check_exact: true
+    check_near: true
+    max_hamming_distance: 3
+
+dataloader:
+  batch_size: 32
+  num_workers: 0
+  shuffle_train: true
+  pin_memory: true
+  persistent_workers: true
+  prefetch_factor: 2
+  drop_last: false
+  sampler: random                 # random | weighted | sequential
+  loader_format: state
+
+packaging:
+  materialize: resize             # resize | copy | link | none
+  overwrite: true
+  manifest_parquet: true
+  write_dataloaders: true
+  image:
+    size: [224, 224]              # [height, width]
+    format: jpeg
+    quality: 95
+    resize_mode: shortest_side    # stretch | shortest_side | pad
+    interpolation: bicubic
+
+reports:
+  html: true
+  pdf: true
+  dpi: 120
+  figure_format: png
+  max_classes_in_plots: 40
+  sample_images_per_class: 0

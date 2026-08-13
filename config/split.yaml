@@ -1,0 +1,19 @@
+# =============================================================================
+# Dataset splitting. Merged into the root config under `split`.
+#
+# `stratified_group` keeps every near-duplicate cluster inside a single split,
+# which is what makes the leakage verification pass rather than merely report.
+# =============================================================================
+
+strategy: stratified_group   # stratified | stratified_group | random
+seed: 42
+
+ratios:
+  train: 0.70
+  val: 0.15
+  test: 0.15
+
+group_by: duplicate_group    # none | duplicate_group | source_dataset
+min_samples_per_class: 3
+drop_classes_below_minimum: true
+verify_leakage: true

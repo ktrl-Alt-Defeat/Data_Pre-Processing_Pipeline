@@ -1,0 +1,58 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "crop-disease-dataset-preprocessing"
+version = "1.0.0"
+description = "Production preprocessing framework for merged crop-disease image classification benchmarks"
+requires-python = ">=3.11"
+readme = "README.md"
+dependencies = [
+    "numpy>=2.1,<3",
+    "pandas>=2.2,<3",
+    "pyarrow>=18.0,<23",
+    "pillow>=11.0,<13",
+    "opencv-python-headless>=4.10,<5",
+    "PyYAML>=6.0,<7",
+    "pydantic>=2.9,<3",
+    "scikit-learn>=1.5,<2",
+    "scipy>=1.14,<2",
+    "torch>=2.9,<3",
+    "torchvision>=0.24,<1",
+    "matplotlib>=3.9,<4",
+    "jinja2>=3.1,<4",
+    "reportlab>=4.2,<5",
+    "tqdm>=4.66,<5",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "ruff>=0.6"]
+
+[project.scripts]
+cdp = "main:main"
+
+[tool.setuptools]
+py-modules = ["main"]
+
+[tool.setuptools.packages.find]
+include = ["preprocessing*", "reports*"]
+
+[tool.setuptools.package-data]
+reports = ["templates/*.html"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "RET", "ARG", "PTH"]
+ignore = ["B008"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["ARG"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+filterwarnings = ["error::DeprecationWarning:preprocessing.*"]
