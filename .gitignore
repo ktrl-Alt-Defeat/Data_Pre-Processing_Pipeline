@@ -52,3 +52,4 @@ outputs/preprocessed_dataset/reports/*.pdf
 Thumbs.db
 Desktop.ini
 .DS_Store
+outputs/preprocessed_dataset/dataset.zip 
