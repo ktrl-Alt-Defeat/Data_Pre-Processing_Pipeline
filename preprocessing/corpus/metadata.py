@@ -206,13 +206,21 @@ class MetadataWriter:
     def write_csv(self, frame: pd.DataFrame, path: Path | None = None) -> Path:
         target = path or self._layout.metadata_csv
         ensure_dir(target.parent)
-        frame.to_csv(target, index=False, encoding="utf-8")
+        target_str = str(target)
+        tmp_str = target_str + ".tmp"
+        with open(tmp_str, "w", encoding="utf-8", newline="") as f:
+            frame.to_csv(f, index=False)
+        shutil.move(tmp_str, target_str)
         return target
 
     def write_parquet(self, frame: pd.DataFrame, path: Path | None = None) -> Path:
         target = path or self._layout.image_manifest
         ensure_dir(target.parent)
-        frame.to_parquet(target, engine="pyarrow", index=False, compression="snappy")
+        target_str = str(target)
+        tmp_str = target_str + ".tmp"
+        with open(tmp_str, "wb") as f:
+            frame.to_parquet(f, engine="pyarrow", index=False, compression="snappy")
+        shutil.move(tmp_str, target_str)
         return target
 
     def write_label_mapping(self, corpus: Corpus, harmonization: dict[str, Any] | None = None) -> Path:
@@ -231,7 +239,11 @@ def write_corpus_index(frame: pd.DataFrame, corpus_dir: Path) -> Path:
     target = corpus_dir / CORPUS_INDEX_FILENAME
     columns = ["image_id", "first_seen_run_id", "first_seen_at"]
     available = [column for column in columns if column in frame.columns]
-    frame[available].to_parquet(target, engine="pyarrow", index=False, compression="snappy")
+    target_str = str(target)
+    tmp_str = target_str + ".tmp"
+    with open(tmp_str, "wb") as f:
+        frame[available].to_parquet(f, engine="pyarrow", index=False, compression="snappy")
+    shutil.move(tmp_str, target_str)
     return target
 
 

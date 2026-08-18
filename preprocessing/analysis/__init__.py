@@ -184,7 +184,8 @@ def _write_artifacts(context: RunContext, report: AnalysisReport) -> dict[str, s
         columns=["group_id", "group_size", "risk", "labels", "sources", "image_ids",
                  "distinct_labels", "distinct_sources", "retained_images"]
     )
-    table.to_csv(layout.leakage_report_csv, index=False, encoding="utf-8")
+    with open(layout.leakage_report_csv, "w", encoding="utf-8", newline="") as f:
+        table.to_csv(f, index=False)
 
     score_payload = report.score.as_dict()
     score_payload.update(

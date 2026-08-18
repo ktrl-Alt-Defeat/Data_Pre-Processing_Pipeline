@@ -346,7 +346,8 @@ def _write_quality_metrics(path: Path, outcomes: Sequence[_Outcome]) -> Path:
         rows.append(row)
 
     frame = pd.DataFrame(rows) if rows else pd.DataFrame(columns=["image_id", "decision", "quality_score"])
-    frame.to_csv(path, index=False, encoding="utf-8")
+    with open(path, "w", encoding="utf-8", newline="") as f:
+        frame.to_csv(f, index=False)
     return path
 
 
@@ -376,7 +377,8 @@ def _write_duplicate_report(path: Path, duplicates: DuplicateResult, corpus: Cor
     columns = ["group_id", "group_size", "image_id", "role", "duplicate_of", "hamming_distance", "similarity",
                "dataset_name", "label", "source_relpath", "perceptual_hash", "status"]
     frame = pd.DataFrame(rows, columns=columns) if rows else pd.DataFrame(columns=columns)
-    frame.to_csv(path, index=False, encoding="utf-8")
+    with open(path, "w", encoding="utf-8", newline="") as f:
+        frame.to_csv(f, index=False)
     return path
 
 

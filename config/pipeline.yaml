@@ -45,13 +45,15 @@ paths:
 #     metadata:
 #       license: CC-BY-4.0
 #       capture: in_field
-sources: []
+sources:
+  - name: color
+    path: color
+    version: "1.0"
+    class_depth: 1
+    priority: 10
 
-# Sources not listed above are ignored unless auto-discovery is switched on.
-# When enabled, each immediate sub-directory of `paths.raw_root` becomes a
-# source; the exclusion patterns keep backup and scratch folders out.
 discovery:
-  auto_discover: false
+  auto_discover: true
   exclude_patterns: [".*", "_*", "*backup*", "*bak", "*tmp*", "*temp*", "*archive*"]
   class_depth: 1
   extensions: [".jpg", ".jpeg", ".png"]

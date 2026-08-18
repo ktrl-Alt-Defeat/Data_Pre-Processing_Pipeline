@@ -362,8 +362,10 @@ def _write_artifacts(config: Config, context: RunContext, corpus: Corpus, report
     rejected_path = directory / "rejected_images.csv"
     report_path = directory / "validation_report.json"
     rejected_mask = frame["rejected"].fillna(False).astype(bool)
-    frame[~rejected_mask].to_csv(accepted_path, index=False, encoding="utf-8")
-    frame[rejected_mask].to_csv(rejected_path, index=False, encoding="utf-8")
+    with open(accepted_path, "w", encoding="utf-8", newline="") as f:
+        frame[~rejected_mask].to_csv(f, index=False)
+    with open(rejected_path, "w", encoding="utf-8", newline="") as f:
+        frame[rejected_mask].to_csv(f, index=False)
 
     writer = MetadataWriter(context.layout, config)
     artifacts = {

@@ -1,0 +1,635 @@
+{
+  "score": 0.850727,
+  "grade": "A",
+  "components": {
+    "class_balance": 0.629067,
+    "duplicate_ratio": 1.0,
+    "diversity": 0.937072,
+    "quality_score": 0.7644966574726368,
+    "label_consistency": 1.0,
+    "resolution_consistency": 0.9999999999999996,
+    "source_diversity": 1.0,
+    "leakage_containment": 1.0
+  },
+  "weights": {
+    "class_balance": 0.25,
+    "duplicate_ratio": 0.15,
+    "diversity": 0.15,
+    "quality_score": 0.2,
+    "label_consistency": 0.1,
+    "resolution_consistency": 0.05,
+    "source_diversity": 0.1
+  },
+  "contributions": {
+    "class_balance": 0.157267,
+    "duplicate_ratio": 0.15,
+    "diversity": 0.140561,
+    "quality_score": 0.152899,
+    "label_consistency": 0.1,
+    "resolution_consistency": 0.05,
+    "source_diversity": 0.1
+  },
+  "manifest": {
+    "run_id": "20260815T060658Z-0614b074",
+    "pipeline_version": "1.0.0",
+    "dataset_version": "1.1.0",
+    "config_hash": "f81ff9d1719e9ad78333b3318b5e5f8215152aaee16efc9669a62fd57ab0567d",
+    "git_commit": "90c3976428b2beb17e34edae5f13a29bc0e17704",
+    "python_version": "3.12.10",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "started_at": "2026-08-15T06:06:58+00:00",
+    "finished_at": null,
+    "duration_seconds": null,
+    "environment": {
+      "python": "3.12.10",
+      "platform": "Windows-11-10.0.26200-SP0",
+      "machine": "AMD64",
+      "processor": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+      "cpu_count": 16,
+      "packages": {
+        "numpy": "2.4.4",
+        "pandas": "3.0.5",
+        "pyarrow": "25.0.1",
+        "pillow": "12.2.0",
+        "opencv-python-headless": "5.0.0.93",
+        "scikit-learn": "1.9.0",
+        "scipy": "1.18.0",
+        "torch": "2.5.1+cu121",
+        "torchvision": "0.20.1+cu121",
+        "matplotlib": "3.11.1",
+        "pydantic": "2.13.4"
+      }
+    }
+  },
+  "dataset_fingerprint": "c0d2abd2005266c065ae9c2c033958ef05921494dca46841273c32dc7ae074fa",
+  "config_fingerprint": "f81ff9d1719e9ad78333b3318b5e5f8215152aaee16efc9669a62fd57ab0567d",
+  "generated_at": "2026-08-15T06:09:14+00:00",
+  "metrics": [
+    {
+      "key": "imbalance.ratio",
+      "name": "Class imbalance ratio",
+      "definition": "Images in the largest class divided by images in the smallest class.",
+      "method": "max(class counts) / min(class counts)",
+      "value": 29.3893,
+      "threshold": 10.0,
+      "status": "critical",
+      "interpretation": "The largest class has 4,379 images and the smallest 149, a 29.4x spread.",
+      "recommendation": "Use class-weighted loss or a balanced sampler, and report per-class metrics rather than accuracy.",
+      "detail": {}
+    },
+    {
+      "key": "imbalance.gini",
+      "name": "Gini coefficient",
+      "definition": "Inequality of the class-size distribution, 0 perfectly even and 1 maximally skewed.",
+      "method": "Gini coefficient over class counts",
+      "value": 0.370933,
+      "threshold": 0.5,
+      "status": "ok",
+      "interpretation": "Class sizes have a Gini coefficient of 0.371.",
+      "recommendation": "Distribution inequality is moderate.",
+      "detail": {}
+    },
+    {
+      "key": "imbalance.evenness",
+      "name": "Distribution evenness",
+      "definition": "Shannon entropy of class sizes normalised to [0, 1]; 1 means all classes are equal.",
+      "method": "H(class counts) / log2(number of classes)",
+      "value": 0.934395,
+      "threshold": 0.8,
+      "status": "ok",
+      "interpretation": "Evenness is 0.934 across 38 classes.",
+      "recommendation": "Evenness below 0.6 usually needs resampling before benchmark use.",
+      "detail": {}
+    },
+    {
+      "key": "imbalance.rare_classes",
+      "name": "Rare classes",
+      "definition": "Classes holding fewer than 25% of the mean class size.",
+      "method": "count < 0.25 x mean class size (1322.4)",
+      "value": 3,
+      "threshold": 0,
+      "status": "warning",
+      "interpretation": "3 of 38 classes are rare.",
+      "recommendation": "Collect more images for these classes or merge them into a coarser label.",
+      "detail": {
+        "classes": [
+          "apple___cedar_apple_rust",
+          "potato___healthy",
+          "raspberry___healthy"
+        ]
+      }
+    },
+    {
+      "key": "imbalance.undersized_classes",
+      "name": "Undersized classes",
+      "definition": "Classes with fewer than the configured minimum of 20 images.",
+      "method": "count < 20",
+      "value": 0,
+      "threshold": 0,
+      "status": "ok",
+      "interpretation": "Every class meets the configured minimum size.",
+      "recommendation": "No action needed.",
+      "detail": {
+        "classes": []
+      }
+    },
+    {
+      "key": "imbalance.long_tail",
+      "name": "Long-tail concentration",
+      "definition": "Number of classes needed to cover 80% of all images, and the share left to the tail.",
+      "method": "Cumulative share over classes sorted by size",
+      "value": 22,
+      "threshold": null,
+      "status": "informational",
+      "interpretation": "22 of 38 classes cover 80% of images; the remaining tail holds 19.3%.",
+      "recommendation": "Report tail-class performance separately; aggregate accuracy hides it.",
+      "detail": {}
+    },
+    {
+      "key": "imbalance.split_feasibility",
+      "name": "Split feasibility",
+      "definition": "Classes too small to place at least one image in each split at ratios 0.70/0.15/0.15.",
+      "method": "count < max(min_samples_per_class, ceil(1 / smallest ratio)) = 7",
+      "value": 0,
+      "threshold": 0,
+      "status": "ok",
+      "interpretation": "Every class can be split at the configured ratios.",
+      "recommendation": "No action needed.",
+      "detail": {
+        "classes": [],
+        "required_per_class": 7
+      }
+    },
+    {
+      "key": "diversity.normalized",
+      "name": "Visual diversity",
+      "definition": "Mean pairwise perceptual-hash distance, normalised by hash length.",
+      "method": "mean Hamming distance over 199,915 sampled pairs / 64 bits",
+      "value": 0.468536,
+      "threshold": 0.25,
+      "status": "ok",
+      "interpretation": "Images differ by 30.0 of 64 hash bits on average (46.9% normalised).",
+      "recommendation": "Diversity is healthy for a benchmark corpus.",
+      "detail": {}
+    },
+    {
+      "key": "diversity.unique_hashes",
+      "name": "Unique perceptual hashes",
+      "definition": "Share of images with a perceptual hash no other image shares exactly.",
+      "method": "unique(perceptual_hash) / images",
+      "value": 1.0,
+      "threshold": 0.95,
+      "status": "ok",
+      "interpretation": "100.00% of images have a distinct perceptual hash.",
+      "recommendation": "No action needed.",
+      "detail": {}
+    },
+    {
+      "key": "diversity.duplicate_ratio",
+      "name": "Duplicate ratio",
+      "definition": "Share of images flagged as exact duplicates by the quality gate.",
+      "method": "count(duplicate_status = exact_duplicate) / images",
+      "value": 0.0,
+      "threshold": 0.02,
+      "status": "ok",
+      "interpretation": "0.00% of images are exact duplicates of another image.",
+      "recommendation": "No action needed.",
+      "detail": {}
+    },
+    {
+      "key": "diversity.near_duplicate_ratio",
+      "name": "Near-duplicate ratio",
+      "definition": "Share of images flagged as perceptually near-identical to a retained image.",
+      "method": "count(duplicate_status = near_duplicate) / images",
+      "value": 0.0,
+      "threshold": 0.05,
+      "status": "ok",
+      "interpretation": "0.00% of images are near duplicates.",
+      "recommendation": "No action needed.",
+      "detail": {}
+    },
+    {
+      "key": "diversity.least_diverse_classes",
+      "name": "Least diverse classes",
+      "definition": "Classes whose members are most visually similar to each other.",
+      "method": "Normalised mean pairwise hash distance within each class",
+      "value": "raspberry___healthy",
+      "threshold": null,
+      "status": "informational",
+      "interpretation": "Lowest-diversity class: raspberry___healthy (0.39), grape___black_rot (0.40), grape___healthy (0.40), grape___esca_black_measles (0.40), potato___healthy (0.41)",
+      "recommendation": "Classes below 0.15 are often a single photo session; treat their scores with caution.",
+      "detail": {
+        "classes": [
+          {
+            "label": "raspberry___healthy",
+            "diversity": 0.38708299839228294
+          },
+          {
+            "label": "grape___black_rot",
+            "diversity": 0.39621044799498745
+          },
+          {
+            "label": "grape___healthy",
+            "diversity": 0.40270050125313284
+          },
+          {
+            "label": "grape___esca_black_measles",
+            "diversity": 0.4035639880952381
+          },
+          {
+            "label": "potato___healthy",
+            "diversity": 0.4127715173226918
+          },
+          {
+            "label": "pepper_bell___healthy",
+            "diversity": 0.4170888157894737
+          },
+          {
+            "label": "soybean___healthy",
+            "diversity": 0.4200509085213033
+          },
+          {
+            "label": "tomato___spider_mites_two_spotted_spider_mite",
+            "diversity": 0.42272125626566415
+          },
+          {
+            "label": "strawberry___healthy",
+            "diversity": 0.43447877506265664
+          },
+          {
+            "label": "grape___leaf_blight_isariopsis_leaf_spot",
+            "diversity": 0.4349467418546366
+          }
+        ]
+      }
+    },
+    {
+      "key": "bias.source_diversity",
+      "name": "Source diversity",
+      "definition": "Entropy of the per-source image counts, normalised to [0, 1].",
+      "method": "H(source shares) / log2(number of sources)",
+      "value": 1.0,
+      "threshold": 0.6,
+      "status": "informational",
+      "interpretation": "1 source(s) contribute: color 100.0%",
+      "recommendation": "A single-source corpus cannot support cross-source generalisation claims.",
+      "detail": {}
+    },
+    {
+      "key": "bias.dominated_classes",
+      "name": "Source-dominated classes",
+      "definition": "Classes where one source supplies more than 80% of the images.",
+      "method": "max(per-class source share) > 0.8",
+      "value": 38,
+      "threshold": 0,
+      "status": "informational",
+      "interpretation": "38 classes are dominated by a single source.",
+      "recommendation": "A model can learn the source's capture conditions instead of the disease; evaluate cross-source held-out performance.",
+      "detail": {
+        "classes": [
+          {
+            "label": "apple___apple_scab",
+            "source": "color",
+            "share": 1.0
+          },
+          {
+            "label": "apple___black_rot",
+            "source": "color",
+            "share": 1.0
+          },
+          {
+            "label": "apple___cedar_apple_rust",
+            "source": "color",
+            "share": 1.0
+          },
+          {
+            "label": "apple___healthy",
+            "source": "color",
+            "share": 1.0
+          },
+          {
+            "label": "blueberry___healthy",
+            "source": "color",
+            "share": 1.0
+          },
+          {
+            "label": "cherry_including_sour___healthy",
+            "source": "color",
+            "share": 1.0
+          },
+          {
+            "label": "cherry_including_sour___powdery_mildew",
+            "source": "color",
+            "share": 1.0
+          },
+          {
+            "label": "corn_maize___cercospora_leaf_spot_gray_leaf_spot",
+            "source": "color",
+            "share": 1.0
+          },
+          {
+            "label": "corn_maize___common_rust",
+            "source": "color",
+            "share": 1.0
+          },
+          {
+            "label": "corn_maize___healthy",
+            "source": "color",
+            "share": 1.0
+          },
+          {
+            "label": "corn_maize___northern_leaf_blight",
+            "source": "color",
+            "share": 1.0
+          },
+          {
+            "label": "grape___black_rot",
+            "source": "color",
+            "share": 1.0
+          },
+          {
+            "label": "grape___esca_black_measles",
+            "source": "color",
+            "share": 1.0
+          },
+          {
+            "label": "grape___healthy",
+            "source": "color",
+            "share": 1.0
+          },
+          {
+            "label": "grape___leaf_blight_isariopsis_leaf_spot",
+            "source": "color",
+            "share": 1.0
+          },
+          {
+            "label": "orange___haunglongbing_citrus_greening",
+            "source": "color",
+            "share": 1.0
+          },
+          {
+            "label": "peach___bacterial_spot",
+            "source": "color",
+            "share": 1.0
+          },
+          {
+            "label": "peach___healthy",
+            "source": "color",
+            "share": 1.0
+          },
+          {
+            "label": "pepper_bell___bacterial_spot",
+            "source": "color",
+            "share": 1.0
+          },
+          {
+            "label": "pepper_bell___healthy",
+            "source": "color",
+            "share": 1.0
+          },
+          {
+            "label": "potato___early_blight",
+            "source": "color",
+            "share": 1.0
+          },
+          {
+            "label": "potato___healthy",
+            "source": "color",
+            "share": 1.0
+          },
+          {
+            "label": "potato___late_blight",
+            "source": "color",
+            "share": 1.0
+          },
+          {
+            "label": "raspberry___healthy",
+            "source": "color",
+            "share": 1.0
+          },
+          {
+            "label": "soybean___healthy",
+            "source": "color",
+            "share": 1.0
+          },
+          {
+            "label": "squash___powdery_mildew",
+            "source": "color",
+            "share": 1.0
+          },
+          {
+            "label": "strawberry___healthy",
+            "source": "color",
+            "share": 1.0
+          },
+          {
+            "label": "strawberry___leaf_scorch",
+            "source": "color",
+            "share": 1.0
+          },
+          {
+            "label": "tomato___bacterial_spot",
+            "source": "color",
+            "share": 1.0
+          },
+          {
+            "label": "tomato___early_blight",
+            "source": "color",
+            "share": 1.0
+          },
+          {
+            "label": "tomato___healthy",
+            "source": "color",
+            "share": 1.0
+          },
+          {
+            "label": "tomato___late_blight",
+            "source": "color",
+            "share": 1.0
+          },
+          {
+            "label": "tomato___leaf_mold",
+            "source": "color",
+            "share": 1.0
+          },
+          {
+            "label": "tomato___septoria_leaf_spot",
+            "source": "color",
+            "share": 1.0
+          },
+          {
+            "label": "tomato___spider_mites_two_spotted_spider_mite",
+            "source": "color",
+            "share": 1.0
+          },
+          {
+            "label": "tomato___target_spot",
+            "source": "color",
+            "share": 1.0
+          },
+          {
+            "label": "tomato___tomato_mosaic_virus",
+            "source": "color",
+            "share": 1.0
+          },
+          {
+            "label": "tomato___tomato_yellow_leaf_curl_virus",
+            "source": "color",
+            "share": 1.0
+          }
+        ]
+      }
+    },
+    {
+      "key": "bias.single_source_classes",
+      "name": "Single-source classes",
+      "definition": "Classes whose images all come from one contributing dataset.",
+      "method": "count(distinct dataset_name per label) == 1",
+      "value": 38,
+      "threshold": null,
+      "status": "informational",
+      "interpretation": "38 of 38 classes come from one source.",
+      "recommendation": "Expected when datasets cover different crops; a concern when they overlap.",
+      "detail": {
+        "classes": [
+          "apple___apple_scab",
+          "apple___black_rot",
+          "apple___cedar_apple_rust",
+          "apple___healthy",
+          "blueberry___healthy",
+          "cherry_including_sour___healthy",
+          "cherry_including_sour___powdery_mildew",
+          "corn_maize___cercospora_leaf_spot_gray_leaf_spot",
+          "corn_maize___common_rust",
+          "corn_maize___healthy",
+          "corn_maize___northern_leaf_blight",
+          "grape___black_rot",
+          "grape___esca_black_measles",
+          "grape___healthy",
+          "grape___leaf_blight_isariopsis_leaf_spot",
+          "orange___haunglongbing_citrus_greening",
+          "peach___bacterial_spot",
+          "peach___healthy",
+          "pepper_bell___bacterial_spot",
+          "pepper_bell___healthy",
+          "potato___early_blight",
+          "potato___healthy",
+          "potato___late_blight",
+          "raspberry___healthy",
+          "soybean___healthy",
+          "squash___powdery_mildew",
+          "strawberry___healthy",
+          "strawberry___leaf_scorch",
+          "tomato___bacterial_spot",
+          "tomato___early_blight",
+          "tomato___healthy",
+          "tomato___late_blight",
+          "tomato___leaf_mold",
+          "tomato___septoria_leaf_spot",
+          "tomato___spider_mites_two_spotted_spider_mite",
+          "tomato___target_spot",
+          "tomato___tomato_mosaic_virus",
+          "tomato___tomato_yellow_leaf_curl_virus"
+        ]
+      }
+    },
+    {
+      "key": "bias.label_consistency",
+      "name": "Label consistency",
+      "definition": "Share of raw folder labels that map to exactly one canonical label.",
+      "method": "1 - (conflicting raw labels / distinct raw labels)",
+      "value": 1.0,
+      "threshold": 1.0,
+      "status": "ok",
+      "interpretation": "Every raw label resolves to exactly one canonical label.",
+      "recommendation": "No action needed.",
+      "detail": {
+        "conflicts": []
+      }
+    },
+    {
+      "key": "bias.resolution_consistency",
+      "name": "Resolution consistency across sources",
+      "definition": "Relative spread of mean megapixels between sources.",
+      "method": "(max - min) / max of per-source mean megapixels",
+      "value": 0.0,
+      "threshold": 0.5,
+      "status": "informational",
+      "interpretation": "Mean megapixels per source: color 0.07",
+      "recommendation": "Large gaps let a model identify the source from image size alone; resizing at packaging time removes the shortcut.",
+      "detail": {}
+    },
+    {
+      "key": "bias.quality_consistency",
+      "name": "Quality consistency across sources",
+      "definition": "Relative spread of mean quality score between sources.",
+      "method": "(max - min) / max of per-source mean quality score",
+      "value": 0.0,
+      "threshold": 0.3,
+      "status": "informational",
+      "interpretation": "Mean quality per source: color 0.764",
+      "recommendation": "Systematic quality gaps between sources bias any cross-source comparison.",
+      "detail": {}
+    },
+    {
+      "key": "leakage.clusters",
+      "name": "Duplicate clusters",
+      "definition": "Groups of images identified as identical or perceptually near-identical.",
+      "method": "Clusters produced by the quality stage's duplicate detector",
+      "value": 522,
+      "threshold": null,
+      "status": "informational",
+      "interpretation": "522 clusters cover 1,772 images; the largest holds 223.",
+      "recommendation": "Clusters are the unit that must stay inside one split.",
+      "detail": {}
+    },
+    {
+      "key": "leakage.at_risk_images",
+      "name": "Images at risk of leaking",
+      "definition": "Images in clusters that still hold more than one retained image after the quality gate.",
+      "method": "sum(retained members) over clusters with more than one retained member",
+      "value": 0,
+      "threshold": 0,
+      "status": "ok",
+      "interpretation": "The quality gate already retained at most one image per cluster; nothing can leak.",
+      "recommendation": "No action needed.",
+      "detail": {}
+    },
+    {
+      "key": "leakage.random_split_probability",
+      "name": "Naive-split leak probability",
+      "definition": "Chance an at-risk cluster would straddle two partitions under an ungrouped split.",
+      "method": "mean over clusters of 1 - sum(ratio ^ retained members)",
+      "value": 0.0,
+      "threshold": 0.0,
+      "status": "ok",
+      "interpretation": "No cluster can straddle a split.",
+      "recommendation": "Grouped splitting reduces this to zero by construction.",
+      "detail": {}
+    },
+    {
+      "key": "leakage.cross_class_clusters",
+      "name": "Cross-class duplicate clusters",
+      "definition": "Clusters whose members carry more than one canonical label.",
+      "method": "count(distinct labels within cluster) > 1",
+      "value": 151,
+      "threshold": 0,
+      "status": "critical",
+      "interpretation": "151 clusters contain images labelled differently.",
+      "recommendation": "These are either annotation conflicts or perceptual-hash false positives. Review analytics/leakage_report.csv, then either fix the labels or tighten quality.duplicates.max_hamming_distance / set across_classes to false.",
+      "detail": {}
+    },
+    {
+      "key": "leakage.cross_source_clusters",
+      "name": "Cross-dataset overlap",
+      "definition": "Clusters whose members come from more than one contributing dataset.",
+      "method": "count(distinct dataset_name within cluster) > 1",
+      "value": 0,
+      "threshold": null,
+      "status": "informational",
+      "interpretation": "No image appears in more than one source.",
+      "recommendation": "Overlap inflates the apparent size of a merged corpus; report the deduplicated count.",
+      "detail": {}
+    }
+  ]
+}

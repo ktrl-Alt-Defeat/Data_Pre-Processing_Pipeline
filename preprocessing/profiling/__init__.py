@@ -104,8 +104,10 @@ def _write_artifacts(context: RunContext, profile: DatasetProfile) -> dict[str, 
     layout = context.layout
     ensure_dir(layout.analytics_dir)
 
-    profile.classes.to_csv(layout.class_distribution_csv, index=False, encoding="utf-8")
-    image_statistics_frame(profile).to_csv(layout.image_statistics_csv, index=False, encoding="utf-8")
+    with open(layout.class_distribution_csv, "w", encoding="utf-8", newline="") as f:
+        profile.classes.to_csv(f, index=False)
+    with open(layout.image_statistics_csv, "w", encoding="utf-8", newline="") as f:
+        image_statistics_frame(profile).to_csv(f, index=False)
     return {
         "class_distribution": str(layout.class_distribution_csv),
         "image_statistics": str(layout.image_statistics_csv),

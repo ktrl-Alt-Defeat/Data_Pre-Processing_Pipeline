@@ -1,0 +1,523 @@
+group_id,group_size,risk,labels,sources,image_ids,distinct_labels,distinct_sources,retained_images
+672d786f28c5d237,223,label_conflict,apple___healthy | blueberry___healthy | orange___haunglongbing_citrus_greening | pepper_bell___bacterial_spot | pepper_bell___healthy | potato___late_blight | raspberry___healthy | soybean___healthy | tomato___bacterial_spot | tomato___late_blight | tomato___septoria_leaf_spot,color,6298ca8b3679e459 981c3ad346148fa7 7ba460581300f0ba 3a0a184c9e06b8d1 66af4382d9b70211 672d786f28c5d237 8e779450c6c623fa 271cae3808812f7a ab1e9e24566f52c6 54a34f0f5e495187 c4a0fba5fe4403a9 7818ca0d97cfafcb c438c9ccfe92df6e 8988f1c03ff94ac5 d61f7eddca388163 6c96a46dc89beeab be240bf8fa890119 dc0549bc7ce09399 c45cd551a4859206 d0a3158ac7adcf6d,11,1,1
+d4fddb76d0b2663c,211,label_conflict,blueberry___healthy | cherry_including_sour___healthy | pepper_bell___bacterial_spot | pepper_bell___healthy | potato___healthy | raspberry___healthy | soybean___healthy | tomato___late_blight,color,d4fddb76d0b2663c 8857da22b4cea75b ae73060f9d1426a5 4b003aafeafc902e 1bcf0d2ee69d74f1 ecdbf23685d14a3b 899c364ba8fcded7 e0e865f88b409669 e59dcf47f864c193 0640ee6b83e7445a 20a229a819be6120 4bc08ae1da5d332e 36ce5121b0715c50 82a0fd3cbdd92ff3 04769b3d6a9724b9 0642e5f465d940db 06e62e5de79a3738 5fd8cec1fbf209ab 07f8ab62e6402466 8ae72459c1852799,8,1,1
+30e6b0d3fd279234,19,label_conflict,cherry_including_sour___healthy | raspberry___healthy | soybean___healthy | tomato___leaf_mold,color,cde3dbec7223f938 0318f174c97147cd e0d05d56c149bdbb 0b055e77e54e6c9e 7ecf8e4877b0bd85 7efe92006e6733a1 f0dc5d34ad3fa753 132f40f76773823b 1b2b3d9ff7da2d8f 06a64f63af59bd2e 30e6b0d3fd279234 3a919befaa269efb 0ee280510888a2f3 436cc3acd00befbd f17cbcdfdc3e583c f3d9cde9b73d500d b05afceea8b50573 50bee8e890186e35 2c0369c9343338d0,4,1,1
+4a3bdc38548ce41e,19,label_conflict,apple___healthy | pepper_bell___bacterial_spot | pepper_bell___healthy | raspberry___healthy | soybean___healthy,color,3ed14dac74f9a97e b058c037e90e1203 34e275a5bd191d1f 5e6e1b4336332cd7 7f479590f8e2a0b5 515ff3306f3f89d5 9e4392f7f78c5fdc 1540e22a56a4689b 4a3bdc38548ce41e 5f393f5414a8d91c 3d19a7fd78688577 c0c2d8c170e2fb94 d847c3042555055f 951442737ea623ae dfe9ae9e780b4752 f6409e2705bb0c74 de5723a477b6e32b d7278a9c6c9f00b4 71cd30e9c9065100,5,1,1
+6eb1cdf484fcd965,18,label_conflict,grape___leaf_blight_isariopsis_leaf_spot | pepper_bell___healthy | soybean___healthy,color,e88520b2cbb4a402 dcc1349e065762e9 6218c15b4a645b31 8dfea6ab66cfef46 a1fced0486f2154b 018801c39dc5414b 843b27210aae2f2b 93f94eb819010a96 4c684e74d60456f4 c48a7cf02fe768b2 6eb1cdf484fcd965 0e91a73af1d3a6ae f227a0058460884c 1e49846ff87e70cf fbfbe1dd3fa3e87b efa5ba8597bba60e f2d4f3fa47323ba1 de8fd29a8eab59d1,3,1,1
+1582519c659f51b3,15,label_conflict,soybean___healthy | tomato___bacterial_spot,color,e58bcd258f386d1c ae9b39555c873d45 766d7fe41b986963 a1ca30a667b282bb 1582519c659f51b3 a830a1cdd49f445c ba5a31016b34663c 8a6150ec318482d4 cd95081306b91253 59aa8d460544d732 f8c89b53f07ae2d7 3a26076e7b0c0f3d b0f5c1c2cc75c4b4 f8cb4c365d15560d ddf41a5ce8431c73,2,1,1
+21500673cf412940,12,label_conflict,apple___healthy | cherry_including_sour___healthy | pepper_bell___healthy | soybean___healthy,color,1b5550ddbd7e9067 bee9fcc24c9b5286 049d4e94820c3f1b c24ad5f88d68c641 21500673cf412940 9256f64395c3ab08 249cac6424ab65ed 9d2c59286a5ddaba 5b66bc82d2b50233 bd3321f2294473b6 cab16d1e0cfd0677 6afbd5600f90bc79,4,1,1
+290cb88375fa6f43,12,label_conflict,soybean___healthy | tomato___bacterial_spot | tomato___septoria_leaf_spot,color,290cb88375fa6f43 8b7a6ccb5d2f7545 520549c32da8f075 ebdaccf5e0a1b4a7 e441d5cf5d0321c1 afb90df9e4bfbfc3 2a04834077da13c5 efca8e20c59d39a1 d4c57743d543ffc5 1eaef33134e5ae1b db8adcea838642d0 7e5835fb14c596d2,3,1,1
+4ee0e68cfb4fa130,12,contained,soybean___healthy,color,c9f69e229c384b65 00f45287ec663898 3c3b2d144ed10978 a63d66d3873d7f63 4194570556b74683 2b6ade79143a3735 4ee0e68cfb4fa130 7e097fd2b8b39ce6 a62884cc18af1949 21d4cf41f96ccd9a f50bf3ef688e1d10 9150f6a21d59e522,1,1,1
+b922709364d414a6,11,label_conflict,pepper_bell___healthy | soybean___healthy,color,baecce41693b5125 c3c1b31c8f7cc767 2a2a50eb7c547d08 a1079f2f5ce5dc3c 763cc7a80fe7a9f8 972abe614a6a4200 e2775b308c5f1e63 e7278e26ad25c707 b922709364d414a6 71a7672c3d60906c af4079424cc38f0c,2,1,1
+6921c00225693312,10,label_conflict,orange___haunglongbing_citrus_greening | soybean___healthy | tomato___bacterial_spot,color,27e607247a595048 bc4e5a169714cdcc 7ba67ff0f1ec5dc2 b5eb4e71ead15d2d 5be17502435f3d16 81e32c0140dce553 431fdd1cfce7c4f5 6921c00225693312 109cc7cdff06ed55 92e6836ce063d2f1,3,1,1
+2ba2c719b0363b13,8,label_conflict,pepper_bell___healthy | soybean___healthy,color,2ba2c719b0363b13 d3ec40194e35467d 37fe142eab5ffdaa f513f0b6949d7aea 49c03572992b6ee9 fc381db90da31d65 b0d224928c2f2b06 366ac0762e430515,2,1,1
+3d2548b3eda2a92a,8,label_conflict,pepper_bell___healthy | soybean___healthy,color,c54be2c3f684999b 57e3b33007caeb02 4e85f6a88a801cd3 24494b0b160c1f51 d146fad58b5bdcdc 3d2548b3eda2a92a cc8298e9b286908e 85fbced7a0f162ee,2,1,1
+cc22669e49f3cad1,8,label_conflict,pepper_bell___bacterial_spot | soybean___healthy,color,45ab6bbf175b96af e96e7f75e3b91015 e9e3b8291d096676 339cd32893cd3107 b7bf62178bdc6343 cc22669e49f3cad1 826cd1fc44c53b94 daff0f2b34a88c2a,2,1,1
+69d84367c2993048,7,contained,soybean___healthy,color,a146f8d2890bb0b8 ec32daf61e7fffd1 4cfe2ff3bd27da8f b8dcbc377dc63330 69d84367c2993048 fd81a3772f04265b fd09ec6d16e6d82d,1,1,1
+72af9e7b4d1464e8,7,contained,soybean___healthy,color,184ffe3181956122 72af9e7b4d1464e8 84752136311f1466 ccbb0debe1dcb6d4 5364f317ddc165c7 ceabfb37efdb8b26 faa37be5d07b9001,1,1,1
+76c76ca3a9dd0b25,7,label_conflict,grape___black_rot | orange___haunglongbing_citrus_greening | tomato___bacterial_spot,color,76c76ca3a9dd0b25 aaf118a3e1e9c960 e9577eaccf2b3f64 54e2bab61e353abd 6649e8cda1abf4d9 ada7e8dd011c950c daef5bf37d79df21,3,1,1
+8fba16ca51370369,7,label_conflict,apple___healthy | soybean___healthy,color,6edb992e00b80d54 ad8b6d762cdd2a75 8981de9d3f72623b 8fba16ca51370369 b078e41a8d1a5293 6d402f2d0078b04b b7c99483147aada1,2,1,1
+3b8b4df9d26a64b7,6,contained,soybean___healthy,color,d3e18914e2003772 e3eca53895103a11 3b8b4df9d26a64b7 1a3f92ed3ac504f2 86c4c291910a61a5 2b7d430cdb161325,1,1,1
+5a081c2651daf51d,6,contained,soybean___healthy,color,5a081c2651daf51d b2d5daa08097fb19 4a7ee0282ceb3136 6c95e10ab06b40d8 fba8ba0de840b3f2 4b989f7c86300662,1,1,1
+d061c4618a1f327c,6,label_conflict,orange___haunglongbing_citrus_greening | soybean___healthy,color,4af258065a84f8da 3004687d00d93cee 0fc1fb4430851598 3ccd2d553264c2bb d061c4618a1f327c 499e7f623370cb66,2,1,1
+11b3b3e3e2962492,5,contained,soybean___healthy,color,11b3b3e3e2962492 ba9c4fb5840874ac 23d0e2238919a3e7 5ba8970c8c41022d e0adf50f1055955d,1,1,1
+554fe86d63eb5fb9,5,label_conflict,potato___late_blight | soybean___healthy | tomato___spider_mites_two_spotted_spider_mite,color,0b57ff0328e52b1e 554fe86d63eb5fb9 834e4f9b77ae9e78 0fc1166a1f477ad7 f588a60612e1122a,3,1,1
+561be41892833668,5,contained,soybean___healthy,color,eb2f3dd09f3eecdc 561be41892833668 ee4e44677562cb4d 433e200d5b06ea81 415bb25e44fbee74,1,1,1
+864e6f4e15dacd03,5,label_conflict,orange___haunglongbing_citrus_greening | soybean___healthy,color,7f9efb703ad564c0 a0902c7eb87e519e 864e6f4e15dacd03 15f6cc32c731d1fa 4475a64e12c151e2,2,1,1
+880208d457d7ef2e,5,label_conflict,apple___healthy | raspberry___healthy | soybean___healthy,color,adada3b01cc79e57 3e7eac2e7125ba45 880208d457d7ef2e 483d7601c33f5456 bd9999405be7837e,3,1,1
+c9b7a4025b683dad,5,contained,soybean___healthy,color,c9b7a4025b683dad bf743fa73df8d716 f1228fda08e23de8 78a2248c538a0090 13a165be65774327,1,1,1
+ca4edb35ff64288c,5,label_conflict,raspberry___healthy | soybean___healthy,color,ca4edb35ff64288c 08ffd192f2a3257f acdcc4869bf55288 439a32bcbd1d436b 62ea742b35d770d3,2,1,1
+d4570b481ba8d92a,5,contained,soybean___healthy,color,e7b9aee0aae3c148 30552d92b716702b d4570b481ba8d92a 59956a611ed5bf6e cfe7985f7acd6aae,1,1,1
+e5a40625336e271b,5,label_conflict,orange___haunglongbing_citrus_greening | soybean___healthy,color,d7e444ae22f95447 4231eef27d6c49cd e5a40625336e271b 8c56113225eaa282 244d0415ccb8d488,2,1,1
+18ba13f471e71b16,4,contained,soybean___healthy,color,31ea291291ee3c43 dcf08d5758b84c45 39b6e7f4aa8de182 18ba13f471e71b16,1,1,1
+25658419eb4a3fdf,4,contained,soybean___healthy,color,9216ae95d93ddf38 a1e41dc08c7af9e5 ce63b0845bfb7ed4 25658419eb4a3fdf,1,1,1
+25e7cd635f7ba977,4,contained,soybean___healthy,color,2c7cd06cff00a819 bd509f1357582b43 e24a45d403b11840 25e7cd635f7ba977,1,1,1
+2a564b47bb5e58a0,4,contained,soybean___healthy,color,2a564b47bb5e58a0 36e372942020338f 43809978f4dd8a63 fe3a66f1f8b3e28b,1,1,1
+2cede1115304629c,4,contained,soybean___healthy,color,15e63e054265bb5b da31b0c181432b29 e1237d88d4158c0d 2cede1115304629c,1,1,1
+4632e86d6eeb33c9,4,contained,soybean___healthy,color,3d529169b3d1e643 4632e86d6eeb33c9 bea552573fa39cb7 2f6d8601eb72c5c4,1,1,1
+55d440a2d0e2c5c0,4,contained,soybean___healthy,color,2ae754555795f102 c04f4f0f7d158e39 8da3d3f117e10385 55d440a2d0e2c5c0,1,1,1
+5809498c8e5ac3db,4,label_conflict,soybean___healthy | tomato___septoria_leaf_spot,color,256c72fbeb173fba 5809498c8e5ac3db f285e5e1ec2ba452 7bc83b62f704418c,2,1,1
+630558d0443f1f90,4,label_conflict,blueberry___healthy | cherry_including_sour___healthy | soybean___healthy,color,630558d0443f1f90 3583ce6ff335659f a77618f55e9a74b2 f511d870c5834e55,3,1,1
+65cb6a29abbbcb74,4,label_conflict,raspberry___healthy | soybean___healthy,color,65cb6a29abbbcb74 2f107ff43684447e 373944e6a557b1b0 a9eca0472dc99817,2,1,1
+717cd5ecc07a67d0,4,label_conflict,cherry_including_sour___powdery_mildew | orange___haunglongbing_citrus_greening,color,a0afef64af60a0ab 99a5cfa32c359643 f720956309450ea9 717cd5ecc07a67d0,2,1,1
+857cec542bf3c307,4,label_conflict,potato___late_blight | soybean___healthy,color,18af400a9678b461 f165025d4e26345d 2970606d5593e09a 857cec542bf3c307,2,1,1
+9f81968c5628c368,4,label_conflict,pepper_bell___healthy | soybean___healthy,color,9f81968c5628c368 e96612d0aa11abe1 165f96d18fd87cc8 916873b3001d90ab,2,1,1
+a047fe9029876e53,4,label_conflict,soybean___healthy | tomato___bacterial_spot,color,b1f6576edb0bce49 a047fe9029876e53 0b0c84dac5af1a64 aeb86fd3c465eab8,2,1,1
+a3074e02d0f928da,4,contained,soybean___healthy,color,74e05fb012845fac 23e01f7d353a45f1 dca0d56c2050d302 a3074e02d0f928da,1,1,1
+a50eafa23374fad4,4,contained,soybean___healthy,color,30a6c102ef0dd195 a50eafa23374fad4 b35d6ec3852fa397 acdba04e4202112d,1,1,1
+c6911d5a79c01ae1,4,label_conflict,cherry_including_sour___healthy | soybean___healthy,color,a8be71e4e15ec817 528761971ec6f0f6 4e1d0947511a6a21 c6911d5a79c01ae1,2,1,1
+cdcfed59bc362dc9,4,label_conflict,soybean___healthy | tomato___bacterial_spot,color,cbbb53aae4871542 cdcfed59bc362dc9 4708f3d6deff04f0 22301dcd4faf1623,2,1,1
+d408d5715fb3862b,4,label_conflict,pepper_bell___healthy | raspberry___healthy | soybean___healthy,color,d408d5715fb3862b bf90060cebef6c7f bbf0e3cc79ab43d8 a44a6e579ce9fad8,3,1,1
+e7aab5ed84b4a3f4,4,contained,orange___haunglongbing_citrus_greening,color,e7aab5ed84b4a3f4 7442f79b48b4a644 08f52df09f2f6b3b 87783fce056d249f,1,1,0
+0343e08fee3ea720,3,label_conflict,orange___haunglongbing_citrus_greening | soybean___healthy | tomato___bacterial_spot,color,c7a3934e3f08745e 0343e08fee3ea720 c4fd520856d36bf2,3,1,1
+07b25d39a0a2dd91,3,contained,tomato___tomato_yellow_leaf_curl_virus,color,2b489211781ef16a 07b25d39a0a2dd91 2006850dc3bc892b,1,1,1
+0e6f95d5a78a0e0c,3,contained,soybean___healthy,color,0e918cfd8f326513 0e6f95d5a78a0e0c 6702531fb8067966,1,1,1
+16a947cab3b33b1f,3,contained,soybean___healthy,color,4cc3865b3677a095 d9d48fc643443900 16a947cab3b33b1f,1,1,1
+16d6176a61227893,3,contained,soybean___healthy,color,02e5176fcbb39c26 6df0e863edd1d4a4 16d6176a61227893,1,1,1
+18e31d5104ca9a42,3,contained,soybean___healthy,color,1c658ed75807f96f 690771809008919c 18e31d5104ca9a42,1,1,1
+1b9c9891f672d50a,3,contained,cherry_including_sour___healthy,color,1b9c9891f672d50a a7160fc237ae9efe 5ef378a3994cdb2d,1,1,1
+1f3139f02be1b2e8,3,contained,soybean___healthy,color,bbbc04711efd4cc7 f0df22d916c0ea75 1f3139f02be1b2e8,1,1,1
+262bf3c1a3f38778,3,label_conflict,pepper_bell___healthy | soybean___healthy,color,262bf3c1a3f38778 be69117908efcd17 9892d5d01335f9e9,2,1,1
+2f6c01cbd1f365ff,3,label_conflict,soybean___healthy | tomato___bacterial_spot,color,2f6c01cbd1f365ff bd97938e77e8790f a517838488292d56,2,1,1
+30a53bb994535e2b,3,contained,soybean___healthy,color,42fd004f725b186d 834e95ecb18ffd18 30a53bb994535e2b,1,1,1
+3555a18e9fd81774,3,label_conflict,raspberry___healthy | soybean___healthy | tomato___bacterial_spot,color,3555a18e9fd81774 957373c0fcbdf0d4 ed52f8246be0c17b,3,1,1
+35e02a40a47dc2f1,3,contained,soybean___healthy,color,35e02a40a47dc2f1 a0b980e906e8ead1 bc05c7729c783b60,1,1,1
+390c0ea5bb831593,3,contained,soybean___healthy,color,206a68c21e2ebaac 19d5a95518dd3e70 390c0ea5bb831593,1,1,1
+3c77d6aaa01048ad,3,label_conflict,apple___healthy | soybean___healthy,color,2bada7dac0a2e8ed b8d275faf314f691 3c77d6aaa01048ad,2,1,1
+40af734b872e8f78,3,contained,orange___haunglongbing_citrus_greening,color,40af734b872e8f78 033a2f82b59e0895 97db861b603c4c89,1,1,1
+41d9b47c14d9c6df,3,label_conflict,orange___haunglongbing_citrus_greening | soybean___healthy,color,cce298b41649aa62 41d9b47c14d9c6df 6254a2cdc014c135,2,1,1
+445dfb1515c86b57,3,contained,soybean___healthy,color,e29ff3c818462cc5 445dfb1515c86b57 16c74956376ca966,1,1,1
+44941f4906b91668,3,contained,soybean___healthy,color,90f5d638e2bea911 d9ac91d228523cde 44941f4906b91668,1,1,1
+44c8b1a9966112fe,3,contained,soybean___healthy,color,60f0afac3e0d6cf3 44c8b1a9966112fe c1a7448bf3af2932,1,1,1
+49c8b2ff5042ee40,3,contained,apple___black_rot,color,5a962820a81e10fd b14023212471caec 49c8b2ff5042ee40,1,1,1
+4dc8167c3026d6a4,3,label_conflict,apple___healthy | potato___healthy | soybean___healthy,color,70104e9dbbd29e35 4dc8167c3026d6a4 b585817eebfb1aae,3,1,1
+5170b1161dab5931,3,contained,soybean___healthy,color,2f1b600df8f960dc 5170b1161dab5931 e59a54640924bc87,1,1,1
+527ade5a982f68aa,3,contained,soybean___healthy,color,b2ebc2a5634b7ecf 527ade5a982f68aa eb371fcb59ebf4aa,1,1,1
+5459b12a7663722a,3,contained,soybean___healthy,color,bf3c92a88d477416 5459b12a7663722a c40258135d64e00c,1,1,1
+547763b7c6220553,3,contained,soybean___healthy,color,b3bbe918f3518db0 547763b7c6220553 20c6e9dbbbc26579,1,1,1
+56ec35fda0338c35,3,contained,soybean___healthy,color,861ce2ce1a6c863d 56ec35fda0338c35 dcabacf799ccd74d,1,1,1
+5b47ba68da83011e,3,label_conflict,pepper_bell___healthy | soybean___healthy,color,5b47ba68da83011e cc7d7810496230d4 9abd7c9b9d9aad70,2,1,1
+5e01efd95619909c,3,contained,soybean___healthy,color,275cdc8f78c9e77b 5e01efd95619909c f8a4aafd3ba16876,1,1,1
+630602102de81f02,3,label_conflict,apple___healthy | soybean___healthy,color,630602102de81f02 2b96724b70561783 1227a34b46ab97be,2,1,1
+65c5df58afbdad3a,3,label_conflict,orange___haunglongbing_citrus_greening | tomato___bacterial_spot,color,002894818a79e8d1 1eea4d1bac884113 65c5df58afbdad3a,2,1,1
+69af23a01012072a,3,contained,cherry_including_sour___healthy,color,98a59b7584432aa6 4a0ed7bd3a4e3a55 69af23a01012072a,1,1,1
+6aa9cb0688d7c845,3,label_conflict,apple___black_rot | raspberry___healthy | soybean___healthy,color,6aa9cb0688d7c845 d4fd68c779fe82bc 8cddfa25de1104fa,3,1,1
+6b929f502e713548,3,contained,soybean___healthy,color,75b46d93e4778413 790bae5723665a5d 6b929f502e713548,1,1,1
+71203cac78b1b881,3,label_conflict,apple___healthy | soybean___healthy,color,7663fd28af4cc4b1 74dcf7a4df3bb525 71203cac78b1b881,2,1,1
+7378953ffac41c91,3,contained,blueberry___healthy,color,7378953ffac41c91 dbd0d1e3f8c9f94f 28abefe91630fd73,1,1,1
+73c26eed74999023,3,contained,soybean___healthy,color,18a752a310fa32a0 676c21d504af9b98 73c26eed74999023,1,1,1
+75c8550f8f79e5c2,3,label_conflict,raspberry___healthy | soybean___healthy,color,f327adaffe20c123 247de92d339224e6 75c8550f8f79e5c2,2,1,1
+7a0875f15cac89ef,3,contained,soybean___healthy,color,7a0875f15cac89ef b9d732cee4aeebaa e9c5eb1c5d833dbf,1,1,1
+7dd4b1ddc2985362,3,contained,orange___haunglongbing_citrus_greening,color,7dd4b1ddc2985362 fcce97dba0ed7959 3ce04e1063dbee59,1,1,1
+82f2933ba761d53a,3,contained,soybean___healthy,color,2a4b47400a8249c7 82f2933ba761d53a 2216469a8378413c,1,1,1
+839f3d977cfd75a3,3,contained,soybean___healthy,color,839f3d977cfd75a3 126b4f49b220599e 1789c44b54a5b26c,1,1,1
+879da3a5f3765057,3,contained,soybean___healthy,color,9bf2392a677ff2ee 879da3a5f3765057 cc794a212523548c,1,1,1
+88a3479aaaf476a8,3,contained,soybean___healthy,color,e86aa8d58eb090b6 184ba78dc14e3293 88a3479aaaf476a8,1,1,1
+94c72499fecaf148,3,label_conflict,soybean___healthy | tomato___septoria_leaf_spot,color,10ab3e8ef0887e8f 94c72499fecaf148 96744e9883563e4f,2,1,1
+95d82620f9ecb9d1,3,contained,soybean___healthy,color,438ea915c8730758 4a9ded296ea4c091 95d82620f9ecb9d1,1,1,1
+9ebcd51d88106531,3,label_conflict,pepper_bell___bacterial_spot | potato___healthy | soybean___healthy,color,9ebcd51d88106531 8754f57941d076b4 0e09edeb74e03a4f,3,1,1
+a26ecc397dac9928,3,label_conflict,apple___healthy | soybean___healthy,color,273c59e5b4a18db3 98b77de3513b1160 a26ecc397dac9928,2,1,1
+b00522d47a4a4f9e,3,contained,cherry_including_sour___healthy,color,b00522d47a4a4f9e e922bd237718a095 b779a206991b3574,1,1,1
+b0d8c181525e3446,3,label_conflict,raspberry___healthy | soybean___healthy,color,4a305b69c3cfd717 1da0a9814705b55e b0d8c181525e3446,2,1,1
+b1228d36adc465c7,3,contained,soybean___healthy,color,c329908abbac8c7b 7a4814a19c579828 b1228d36adc465c7,1,1,1
+b3bd2bf195b057c0,3,label_conflict,blueberry___healthy | cherry_including_sour___healthy | tomato___tomato_mosaic_virus,color,b3bd2bf195b057c0 aa3b78373124158d 9a37f9fd83aebe07,3,1,1
+b835e350f8c04494,3,label_conflict,apple___healthy | soybean___healthy,color,da61022af81bac6d e57b0983f1ea82af b835e350f8c04494,2,1,1
+b93c34eeb3697b13,3,label_conflict,raspberry___healthy | soybean___healthy,color,7956c9338b937d7f b93c34eeb3697b13 71f98226fd153ee6,2,1,1
+ba8149df7498f0c8,3,contained,soybean___healthy,color,aebb14bd35b3159a f045842d98c8e746 ba8149df7498f0c8,1,1,1
+bb811436ea255456,3,label_conflict,soybean___healthy | tomato___bacterial_spot,color,2f54ce8937802d02 bb811436ea255456 1e402f1ead895a57,2,1,1
+bd0a7356b333fd7a,3,contained,soybean___healthy,color,a163931d6589764e bd0a7356b333fd7a 6d57faaf6dbe2b56,1,1,1
+bea67e8d0baa6937,3,contained,soybean___healthy,color,158f54a68afdeb70 6dca5f37bdba595f bea67e8d0baa6937,1,1,1
+bf3e4607021a79eb,3,contained,raspberry___healthy,color,bf3e4607021a79eb f97e1cc76fb9b188 c5961fccf9d6beed,1,1,1
+bffb8b5aa2b5ff15,3,contained,soybean___healthy,color,673c9dca1cedd7f7 bffb8b5aa2b5ff15 7f25caee2530170a,1,1,1
+c21dc969c59947b9,3,contained,soybean___healthy,color,c21dc969c59947b9 2a3f8ee1baebc76c 30ba208cb95bf586,1,1,1
+ce454a818993df61,3,contained,soybean___healthy,color,1abf09d0aa10e09d 1d353d666450927b ce454a818993df61,1,1,1
+df73495339975d2d,3,contained,soybean___healthy,color,2eb83153e8929258 df73495339975d2d 570f4fa897743a7f,1,1,1
+e723cf756b401b88,3,contained,soybean___healthy,color,6f8bdfe87cecb3e9 7ea5c909fa73d871 e723cf756b401b88,1,1,1
+e80597005ce41eb7,3,contained,orange___haunglongbing_citrus_greening,color,684e19d4d45c1592 77de9f7f7bf4fab8 e80597005ce41eb7,1,1,1
+ec954f50836e6cbe,3,contained,soybean___healthy,color,807eafcad9815edc 9d3fb914b72611f6 ec954f50836e6cbe,1,1,1
+ee687f6107da6737,3,label_conflict,pepper_bell___healthy | tomato___bacterial_spot,color,ee687f6107da6737 8a3c3466a9adfed8 5aea313096b68317,2,1,1
+f4453922eae0ca27,3,contained,soybean___healthy,color,f4453922eae0ca27 43c88a3f26714d4a 8080c0f539697f0f,1,1,1
+f7180be887012db5,3,contained,cherry_including_sour___healthy,color,eac6b975701b8d73 f7180be887012db5 e7e95db8dfcadcb2,1,1,1
+fca880c0d0c8bb31,3,label_conflict,blueberry___healthy | pepper_bell___healthy,color,fca880c0d0c8bb31 93ae58cdd3da2f71 016388eddf315b12,2,1,1
+ffa380d4266c6524,3,label_conflict,raspberry___healthy | soybean___healthy,color,91658dca1ca52e3e 326713d064fcd82e ffa380d4266c6524,2,1,1
+00cdf2e7563cc604,2,label_conflict,apple___healthy | potato___late_blight,color,00cdf2e7563cc604 0024d31e21775ebe,2,1,1
+01ff9c7b07d675b5,2,contained,orange___haunglongbing_citrus_greening,color,296b9fd3544f3285 01ff9c7b07d675b5,1,1,1
+023e23118ec4c709,2,contained,orange___haunglongbing_citrus_greening,color,023e23118ec4c709 0dc0ffb5e339db09,1,1,1
+036dbb1becbf954b,2,contained,soybean___healthy,color,036dbb1becbf954b c88dc14d4fed25e0,1,1,1
+0382a192fe193274,2,label_conflict,pepper_bell___healthy | soybean___healthy,color,2514977ecaad75c0 0382a192fe193274,2,1,1
+04c9109668b3e70e,2,label_conflict,soybean___healthy | tomato___target_spot,color,32f59c73a009ed39 04c9109668b3e70e,2,1,1
+0626ab487596d39f,2,label_conflict,potato___late_blight | soybean___healthy,color,0eb513533375b187 0626ab487596d39f,2,1,1
+06fbb52fa1203c88,2,label_conflict,orange___haunglongbing_citrus_greening | soybean___healthy,color,34d94ea7d088621b 06fbb52fa1203c88,2,1,1
+082f3e63dae84ce8,2,contained,orange___haunglongbing_citrus_greening,color,082f3e63dae84ce8 13d5a874489db13b,1,1,0
+0901e88a8ae97880,2,contained,soybean___healthy,color,abb296fcc55d7024 0901e88a8ae97880,1,1,1
+09e21580ffe165f0,2,contained,soybean___healthy,color,1ffe2a695f05a0fa 09e21580ffe165f0,1,1,1
+0a35565161f7ad48,2,label_conflict,orange___haunglongbing_citrus_greening | soybean___healthy,color,7642bfc5b986a6d4 0a35565161f7ad48,2,1,1
+0b96f7eab0aed2fa,2,contained,pepper_bell___bacterial_spot,color,0b96f7eab0aed2fa dcaf93bd1ea0d698,1,1,1
+0d87f88c334f0be9,2,contained,tomato___healthy,color,0d87f88c334f0be9 f8f14fa6dedd4549,1,1,1
+0e74ca94f2ba390a,2,contained,soybean___healthy,color,0e74ca94f2ba390a ae8bfbaeb6a188e5,1,1,1
+0e78708a991f5afc,2,contained,soybean___healthy,color,0e78708a991f5afc 450b9a225ddb4bc2,1,1,1
+0e9bbcbf6ed900f1,2,contained,blueberry___healthy,color,0e9bbcbf6ed900f1 20f46fe7da0bc356,1,1,1
+0eab7f11c492d98e,2,contained,soybean___healthy,color,0eab7f11c492d98e 6f2a7744b4711d25,1,1,1
+0f06bb77aba58b22,2,contained,soybean___healthy,color,0f06bb77aba58b22 5b3a667d6986a349,1,1,1
+0f7c07087f0b49fd,2,label_conflict,soybean___healthy | strawberry___leaf_scorch,color,0f7c07087f0b49fd 9fe8916248cdaa11,2,1,1
+1072944d85788b87,2,contained,tomato___tomato_yellow_leaf_curl_virus,color,d6846943a320dc0d 1072944d85788b87,1,1,1
+120fc63c0630b520,2,contained,soybean___healthy,color,120fc63c0630b520 5077d9b751797309,1,1,1
+126a6f1d2abb7af7,2,label_conflict,potato___late_blight | soybean___healthy,color,dbc6efefadfad003 126a6f1d2abb7af7,2,1,1
+137da69a5e1bd549,2,contained,apple___healthy,color,c95502061acdd7cb 137da69a5e1bd549,1,1,1
+1512b32a140abb49,2,contained,tomato___late_blight,color,1512b32a140abb49 3edad92ae9f4821e,1,1,1
+15cef827ea232da1,2,label_conflict,cherry_including_sour___healthy | peach___healthy,color,8eb06558bebb11a3 15cef827ea232da1,2,1,1
+1611d41645186eb0,2,label_conflict,pepper_bell___healthy | tomato___bacterial_spot,color,1611d41645186eb0 0ce49b285329f804,2,1,1
+169e6906f1aef716,2,label_conflict,orange___haunglongbing_citrus_greening | pepper_bell___healthy,color,1cd1d1f5078aeb44 169e6906f1aef716,2,1,1
+18190d5f6871ed5a,2,contained,cherry_including_sour___healthy,color,18190d5f6871ed5a 082bbb33b7ade9f8,1,1,1
+181ffaae8f2de780,2,contained,soybean___healthy,color,181ffaae8f2de780 2bd32afb2432f960,1,1,1
+1a11e659b3f5c8a3,2,contained,tomato___tomato_yellow_leaf_curl_virus,color,58668fc1cfe0f8c0 1a11e659b3f5c8a3,1,1,1
+1a3cdd92af4fc690,2,contained,soybean___healthy,color,1a3cdd92af4fc690 1d034653e6beb853,1,1,1
+1ad225d28b4f5a23,2,contained,corn_maize___healthy,color,1ad225d28b4f5a23 57da02766200217d,1,1,1
+1b717f2525488a56,2,contained,orange___haunglongbing_citrus_greening,color,1b717f2525488a56 6e48fe4da38f0c3c,1,1,0
+1b948f3f6f6ee3b9,2,contained,soybean___healthy,color,1b948f3f6f6ee3b9 061eb8fad22e872c,1,1,1
+1b9725b399780330,2,contained,orange___haunglongbing_citrus_greening,color,2b381d68048f3a3d 1b9725b399780330,1,1,1
+1c7e79962132ff8f,2,label_conflict,potato___early_blight | soybean___healthy,color,9f18c893a96a0fcf 1c7e79962132ff8f,2,1,1
+1d8c325a2b1ffa11,2,contained,soybean___healthy,color,8073a6be3fa7d6f9 1d8c325a2b1ffa11,1,1,1
+1e6c2bc4d6159a39,2,contained,soybean___healthy,color,e0357d74578ab244 1e6c2bc4d6159a39,1,1,1
+2069f30571e20e9e,2,label_conflict,pepper_bell___healthy | soybean___healthy,color,2069f30571e20e9e 68c474c54fbb248d,2,1,1
+2188963b65f575d5,2,label_conflict,orange___haunglongbing_citrus_greening | soybean___healthy,color,1b5143f21061e63d 2188963b65f575d5,2,1,1
+21fc418b8fe2375d,2,contained,soybean___healthy,color,21fc418b8fe2375d 9ddb0b28b9724091,1,1,1
+22dc8cfa171f3ed5,2,label_conflict,cherry_including_sour___healthy | raspberry___healthy,color,4bc9e27e3adfe803 22dc8cfa171f3ed5,2,1,1
+244caffaf15dedf7,2,contained,cherry_including_sour___powdery_mildew,color,de1b9f70c7a57851 244caffaf15dedf7,1,1,1
+24b39ff773003fd2,2,contained,tomato___tomato_yellow_leaf_curl_virus,color,24b39ff773003fd2 0aecae2b6a93b636,1,1,1
+2657d41bc3e22ee8,2,contained,soybean___healthy,color,2657d41bc3e22ee8 3a8d946195543333,1,1,1
+273fec2f96d921ef,2,label_conflict,potato___late_blight | strawberry___leaf_scorch,color,273fec2f96d921ef a52ef16fc3b52429,2,1,1
+2768324e0b50462a,2,label_conflict,cherry_including_sour___healthy | soybean___healthy,color,9d7934200b14870a 2768324e0b50462a,2,1,1
+28032426e0979993,2,contained,tomato___late_blight,color,28032426e0979993 0532d528aa851424,1,1,0
+287f775c8112a315,2,contained,soybean___healthy,color,287f775c8112a315 f8608e2654f4b466,1,1,1
+2899d6f77a5d8fe1,2,label_conflict,blueberry___healthy | tomato___spider_mites_two_spotted_spider_mite,color,2899d6f77a5d8fe1 f0d634fc603f04d7,2,1,1
+2956f80cf7c38319,2,contained,soybean___healthy,color,7f674fce1c60b76e 2956f80cf7c38319,1,1,1
+2aa9d8ee1a42c4ac,2,label_conflict,pepper_bell___bacterial_spot | soybean___healthy,color,27d0c1f52a6d6c9f 2aa9d8ee1a42c4ac,2,1,1
+2ad9c150ace67fbe,2,label_conflict,tomato___leaf_mold | tomato___spider_mites_two_spotted_spider_mite,color,2ad9c150ace67fbe 40808e6579494b02,2,1,1
+2af65c7ed549a7d8,2,contained,orange___haunglongbing_citrus_greening,color,7b5db1c77a5ef2b2 2af65c7ed549a7d8,1,1,1
+2b8d327b94fe62dd,2,contained,cherry_including_sour___powdery_mildew,color,6d0882a236a12a08 2b8d327b94fe62dd,1,1,1
+2c91355ecac83275,2,contained,tomato___tomato_yellow_leaf_curl_virus,color,2c91355ecac83275 2b76bd1c22f35a5d,1,1,1
+2ca7238efe63cdf0,2,contained,tomato___healthy,color,2ca7238efe63cdf0 8500c7e23502b644,1,1,1
+2d56f40c3b4f3322,2,contained,soybean___healthy,color,cb50675adf2ceb0f 2d56f40c3b4f3322,1,1,1
+2d86dbeb3cf70354,2,contained,soybean___healthy,color,77cca624309d7d13 2d86dbeb3cf70354,1,1,1
+2d913c675d98a7f3,2,contained,tomato___late_blight,color,2d913c675d98a7f3 13767aef3b1d76f0,1,1,1
+2ee53a385f60c720,2,contained,soybean___healthy,color,2ee53a385f60c720 1eda99c7059449e2,1,1,1
+2ef69ff10184ce77,2,contained,soybean___healthy,color,2ef69ff10184ce77 9a9e11a9abe57c7b,1,1,1
+2efc3b72d5c1eee1,2,contained,orange___haunglongbing_citrus_greening,color,b6f6429275548458 2efc3b72d5c1eee1,1,1,1
+2efebaa97e85f547,2,contained,soybean___healthy,color,2efebaa97e85f547 0e953be5796b81bd,1,1,1
+2faf4a1a0ac88403,2,contained,soybean___healthy,color,2faf4a1a0ac88403 17b0be4905e20963,1,1,1
+2fbb0c777715864e,2,contained,tomato___tomato_yellow_leaf_curl_virus,color,bc30252ccdde81cc 2fbb0c777715864e,1,1,0
+309a347dd1bfcb0d,2,contained,tomato___healthy,color,309a347dd1bfcb0d 8ab43e2c90d5fd8a,1,1,1
+3131cb1293f79101,2,label_conflict,soybean___healthy | tomato___septoria_leaf_spot,color,3131cb1293f79101 207b7d85c0740c02,2,1,1
+318044cef300d54f,2,contained,raspberry___healthy,color,318044cef300d54f 691792522461c999,1,1,1
+32e07ef1f676e9eb,2,contained,soybean___healthy,color,32e07ef1f676e9eb a4ca46c5e36f9355,1,1,1
+332352c3a1750a8c,2,label_conflict,apple___healthy | soybean___healthy,color,332352c3a1750a8c 79f4cd59009bb2f5,2,1,1
+333e8a1dab5521c5,2,contained,soybean___healthy,color,d881cab2f643b5d0 333e8a1dab5521c5,1,1,1
+33e0078a0641630d,2,contained,soybean___healthy,color,33e0078a0641630d 8962d58ba1ff33eb,1,1,1
+346db9254eed78ac,2,contained,soybean___healthy,color,346db9254eed78ac 1d0ae926e9d0a5b8,1,1,1
+361b285a81beaa9d,2,contained,grape___black_rot,color,d777a86a341e8c56 361b285a81beaa9d,1,1,1
+36c079aeea8d94a6,2,contained,soybean___healthy,color,36c079aeea8d94a6 14087d3817f3eaac,1,1,1
+376eb6f56ae4bd29,2,contained,tomato___late_blight,color,376eb6f56ae4bd29 5f6f656f370c02d3,1,1,0
+38235c95bc7bfad2,2,contained,pepper_bell___bacterial_spot,color,38235c95bc7bfad2 984476058c4f1027,1,1,1
+3861bf5c16cf335a,2,contained,soybean___healthy,color,cc49732c2a2954c7 3861bf5c16cf335a,1,1,1
+38e9560a46878381,2,label_conflict,apple___healthy | cherry_including_sour___healthy,color,38e9560a46878381 4c2900b265f8d01a,2,1,1
+39d66b12a7113be8,2,contained,tomato___tomato_yellow_leaf_curl_virus,color,8f64279335e97f40 39d66b12a7113be8,1,1,1
+3bc965263f6af6ca,2,contained,soybean___healthy,color,3bc965263f6af6ca 18f70f635b3a1ae8,1,1,1
+3be24de8a5edd8a5,2,contained,soybean___healthy,color,091c0348d3ac8cb6 3be24de8a5edd8a5,1,1,1
+401fe6412d2bcc3e,2,contained,soybean___healthy,color,401fe6412d2bcc3e 1e02184f70491bdb,1,1,1
+415c3c0d79dfb651,2,contained,soybean___healthy,color,415c3c0d79dfb651 2df4e1abae68cc12,1,1,1
+41ec4523d0cf6bd7,2,contained,raspberry___healthy,color,f98816dd56da3d76 41ec4523d0cf6bd7,1,1,1
+420816d72dd005de,2,contained,orange___haunglongbing_citrus_greening,color,420816d72dd005de f3a0206b8e5d03e9,1,1,0
+42d7e73852b68a57,2,contained,soybean___healthy,color,e5543247bcc51a78 42d7e73852b68a57,1,1,1
+432ef86ff4da14c7,2,contained,soybean___healthy,color,d14612df82ddf8ce 432ef86ff4da14c7,1,1,1
+4416b6f3359e995e,2,contained,tomato___spider_mites_two_spotted_spider_mite,color,88ba9343981ed534 4416b6f3359e995e,1,1,1
+445fee4e2f3cf1c3,2,contained,orange___haunglongbing_citrus_greening,color,445fee4e2f3cf1c3 ec224efd7a2f6299,1,1,0
+4472b7e7a7f9a3c4,2,label_conflict,orange___haunglongbing_citrus_greening | tomato___bacterial_spot,color,82e79370e84b22b6 4472b7e7a7f9a3c4,2,1,1
+44cc553764b35173,2,contained,soybean___healthy,color,c6f1d4fd3082ebbc 44cc553764b35173,1,1,1
+44e0790d7eb99464,2,contained,orange___haunglongbing_citrus_greening,color,44e0790d7eb99464 9b6049bb7f3b4d67,1,1,1
+458f58eb3b7cb5b5,2,label_conflict,apple___healthy | cherry_including_sour___healthy,color,458f58eb3b7cb5b5 4eec204988e6367f,2,1,1
+45d95d5732f75607,2,contained,soybean___healthy,color,45d95d5732f75607 f83b4da61bc88652,1,1,1
+460a9eebd9fd4c64,2,contained,tomato___bacterial_spot,color,460a9eebd9fd4c64 7af96fc45e97e50b,1,1,1
+46fab67ebeb64287,2,contained,soybean___healthy,color,46fab67ebeb64287 f4d534aa79a18d6d,1,1,1
+47210fc872a24ce1,2,label_conflict,apple___healthy | soybean___healthy,color,47210fc872a24ce1 1a043c9ac962e1e4,2,1,1
+47a16abd95ef24ae,2,contained,orange___haunglongbing_citrus_greening,color,47a16abd95ef24ae 47466d8b5dd17196,1,1,0
+483716813f8b6e3e,2,contained,tomato___tomato_mosaic_virus,color,483716813f8b6e3e ae2a36d299bc8d2f,1,1,1
+4a275a9aa41bb17b,2,label_conflict,soybean___healthy | tomato___leaf_mold,color,8b29a045b669da9b 4a275a9aa41bb17b,2,1,1
+4a30b7b567d99e09,2,contained,soybean___healthy,color,4a30b7b567d99e09 fb0b11b2c6a1b7e0,1,1,1
+4abce034224ecbf7,2,contained,grape___esca_black_measles,color,5e3e5e34b7a13355 4abce034224ecbf7,1,1,1
+4bce3b79e59f6295,2,contained,soybean___healthy,color,4bce3b79e59f6295 6daa6ba9bfc27448,1,1,1
+4cd089f453fe6981,2,contained,potato___late_blight,color,3a46ca2e248ec9b4 4cd089f453fe6981,1,1,1
+4d00b24d7e39ff0f,2,contained,soybean___healthy,color,4d00b24d7e39ff0f 28e33eea7a716711,1,1,1
+4e7f7997978274f0,2,contained,soybean___healthy,color,d992756a1e51af6a 4e7f7997978274f0,1,1,1
+4fcd816c73ec9a63,2,contained,soybean___healthy,color,4fcd816c73ec9a63 291772e3bd5ff006,1,1,1
+502fb061fc2c9fe3,2,label_conflict,soybean___healthy | tomato___bacterial_spot,color,502fb061fc2c9fe3 1f173dc5f8eed564,2,1,1
+5045f14ecb2217d8,2,contained,apple___healthy,color,5045f14ecb2217d8 6fb93c2ecacd6de5,1,1,1
+50e2614bbf925538,2,label_conflict,pepper_bell___healthy | soybean___healthy,color,50e2614bbf925538 5b159af945a60fb5,2,1,1
+511a589c6e491302,2,label_conflict,soybean___healthy | tomato___late_blight,color,ff1b5ef60c9c524f 511a589c6e491302,2,1,1
+5319c6567b9c7e58,2,label_conflict,pepper_bell___healthy | soybean___healthy,color,5319c6567b9c7e58 67dd114da2cec4bd,2,1,1
+535081f66985ed3a,2,contained,orange___haunglongbing_citrus_greening,color,535081f66985ed3a 47eaed6cb217805c,1,1,0
+5574d49357963303,2,contained,orange___haunglongbing_citrus_greening,color,974dd92a6a013447 5574d49357963303,1,1,1
+55cd281c99c54705,2,label_conflict,blueberry___healthy | tomato___tomato_mosaic_virus,color,55cd281c99c54705 ed4f04206245f67d,2,1,1
+563b29cdd102adcd,2,contained,tomato___tomato_yellow_leaf_curl_virus,color,830ad982de56baef 563b29cdd102adcd,1,1,1
+5642c32fbaec60cc,2,label_conflict,pepper_bell___bacterial_spot | soybean___healthy,color,38f312bb0c7e6659 5642c32fbaec60cc,2,1,1
+56c091c3be6d0ce3,2,contained,soybean___healthy,color,51eb706a31fd934b 56c091c3be6d0ce3,1,1,1
+56f45b7cf0536bf1,2,contained,tomato___late_blight,color,56f45b7cf0536bf1 7f67e7cca98e533d,1,1,1
+570b6842b940bf72,2,contained,soybean___healthy,color,f6b5767f097fd18e 570b6842b940bf72,1,1,1
+572f698967c1c316,2,contained,soybean___healthy,color,a747411fe80f236f 572f698967c1c316,1,1,1
+577b2517f38be1fa,2,contained,blueberry___healthy,color,c179a256137078d4 577b2517f38be1fa,1,1,1
+57f0d2abbf291409,2,contained,soybean___healthy,color,57f0d2abbf291409 54d4d705254238b5,1,1,1
+57f24910ebedfec0,2,contained,soybean___healthy,color,57f24910ebedfec0 921c858e1244b89a,1,1,1
+58147f6abe894b05,2,contained,blueberry___healthy,color,58147f6abe894b05 4707912c144058d4,1,1,1
+58735b03ff0a8a79,2,contained,tomato___tomato_yellow_leaf_curl_virus,color,58735b03ff0a8a79 084a87c6c162a21f,1,1,0
+58c8bdd564c406d2,2,contained,soybean___healthy,color,58c8bdd564c406d2 aee728e8e4b903ab,1,1,1
+58f76c7db6a4bde1,2,label_conflict,orange___haunglongbing_citrus_greening | potato___late_blight,color,58f76c7db6a4bde1 535d2cbaa65541a2,2,1,1
+59c32d7e1eac109f,2,contained,orange___haunglongbing_citrus_greening,color,c23c5c5678f17e17 59c32d7e1eac109f,1,1,1
+5a10b5856511afed,2,contained,pepper_bell___healthy,color,5a10b5856511afed 568446c117ff3334,1,1,1
+5abad5fdfc9680bf,2,contained,soybean___healthy,color,6a283e677feba33b 5abad5fdfc9680bf,1,1,1
+5ac868e614641100,2,contained,soybean___healthy,color,75a5846672954a04 5ac868e614641100,1,1,1
+5bb066319b02f240,2,contained,soybean___healthy,color,f2b1d32c431daa4e 5bb066319b02f240,1,1,1
+5d520deba4c55f3a,2,contained,soybean___healthy,color,9ba52e017aded20f 5d520deba4c55f3a,1,1,1
+5d9b70f6298fd733,2,contained,soybean___healthy,color,8bb94a50a7bef42b 5d9b70f6298fd733,1,1,1
+5f4105ef3b206c63,2,contained,tomato___healthy,color,8c9bc6a03504fec8 5f4105ef3b206c63,1,1,1
+5fa2367ff2cc7c20,2,contained,soybean___healthy,color,5fa2367ff2cc7c20 5dcdf0e6201345cc,1,1,1
+605cdadd71bc3dfd,2,contained,tomato___tomato_yellow_leaf_curl_virus,color,edcb4903dd5c4b91 605cdadd71bc3dfd,1,1,1
+605dacbf94d07fbb,2,contained,raspberry___healthy,color,605dacbf94d07fbb 62b5003e63bfdac1,1,1,1
+6065ba17f3da3f13,2,contained,soybean___healthy,color,6065ba17f3da3f13 a5799c488fd1944b,1,1,1
+610b2995ae08b1cc,2,contained,soybean___healthy,color,01e79273746d6691 610b2995ae08b1cc,1,1,1
+6148ef3f26d07921,2,contained,tomato___healthy,color,6148ef3f26d07921 236678d769198f2e,1,1,1
+6353badf5b9a5c16,2,contained,cherry_including_sour___healthy,color,6353badf5b9a5c16 9739fc915a64e6b2,1,1,1
+63d303d75b5a0e6b,2,contained,soybean___healthy,color,63d303d75b5a0e6b b09eb0d34e00729d,1,1,1
+63ea3c6ddf2f3562,2,contained,tomato___healthy,color,9c94002217ec7ff3 63ea3c6ddf2f3562,1,1,1
+641210d4c64b2d57,2,contained,orange___haunglongbing_citrus_greening,color,468ea45449472100 641210d4c64b2d57,1,1,1
+6579260efdfb96a7,2,label_conflict,blueberry___healthy | tomato___spider_mites_two_spotted_spider_mite,color,6579260efdfb96a7 d70b2fbf45caae65,2,1,1
+66b279375f44acab,2,contained,soybean___healthy,color,c6bc29d0e2d410a6 66b279375f44acab,1,1,1
+66bc7d38c95c7a75,2,contained,tomato___healthy,color,0e00c9df7dddf90b 66bc7d38c95c7a75,1,1,1
+673cf77e79f08402,2,label_conflict,orange___haunglongbing_citrus_greening | soybean___healthy,color,4b806fbe122f4335 673cf77e79f08402,2,1,1
+67634c4a4b6bb6b4,2,contained,orange___haunglongbing_citrus_greening,color,67634c4a4b6bb6b4 03b81d1f2f2d8e68,1,1,1
+677022d5d50bb543,2,label_conflict,pepper_bell___bacterial_spot | pepper_bell___healthy,color,33987d84d586dfd1 677022d5d50bb543,2,1,1
+67753cdce5fc1597,2,contained,soybean___healthy,color,5bcf271ac5288116 67753cdce5fc1597,1,1,1
+68152d1579ee0249,2,contained,apple___healthy,color,68152d1579ee0249 99caf77f422da281,1,1,1
+684679b8b7cf67d7,2,contained,apple___healthy,color,684679b8b7cf67d7 e95ee3452741e5e5,1,1,1
+693d24a80786231d,2,label_conflict,pepper_bell___bacterial_spot | soybean___healthy,color,693d24a80786231d 75eb0eb87f50ed20,2,1,1
+694f6fd27c1f325b,2,label_conflict,blueberry___healthy | tomato___leaf_mold,color,694f6fd27c1f325b c58acd3816e30c30,2,1,1
+694fc23a9d78b690,2,contained,soybean___healthy,color,b0a04184fd6fae6e 694fc23a9d78b690,1,1,1
+6abfa423f77999c0,2,contained,tomato___healthy,color,6abfa423f77999c0 7ef84c1f3e0cd272,1,1,1
+6be8e6466c9811d8,2,contained,cherry_including_sour___powdery_mildew,color,6be8e6466c9811d8 69ff9008361bc6fe,1,1,1
+6ca204b8e1c852c0,2,contained,soybean___healthy,color,6ca204b8e1c852c0 fa4fc7d8f38607b0,1,1,1
+6cb34613a9a3168f,2,contained,peach___bacterial_spot,color,7989db4d407b6c6f 6cb34613a9a3168f,1,1,1
+6e3d2830d7d5ca56,2,label_conflict,cherry_including_sour___healthy | tomato___septoria_leaf_spot,color,8e80278e24a03849 6e3d2830d7d5ca56,2,1,1
+6e429705a5ec47fd,2,contained,cherry_including_sour___healthy,color,6e429705a5ec47fd 28c7b23c35a2bdc2,1,1,1
+6ecc079caf9ba406,2,contained,soybean___healthy,color,d7a8128a501a3488 6ecc079caf9ba406,1,1,1
+6ee9956fe0887057,2,contained,tomato___tomato_yellow_leaf_curl_virus,color,6ee9956fe0887057 a70a3d4c95c17e33,1,1,0
+705c9895a57147dd,2,contained,soybean___healthy,color,c5867d539c0e6afc 705c9895a57147dd,1,1,1
+70f9f92cece24262,2,contained,soybean___healthy,color,bce0a9aaf084782c 70f9f92cece24262,1,1,1
+71d64712ff577a90,2,contained,orange___haunglongbing_citrus_greening,color,3840f5564941baee 71d64712ff577a90,1,1,1
+7202112df929a2dd,2,label_conflict,grape___esca_black_measles | tomato___bacterial_spot,color,7202112df929a2dd afc8be329310d633,2,1,1
+720e6249ea699214,2,contained,tomato___tomato_yellow_leaf_curl_virus,color,b91a886fdc707d5c 720e6249ea699214,1,1,1
+72ccebe533a2bd2a,2,contained,soybean___healthy,color,72ccebe533a2bd2a 9fa4823a08532a1b,1,1,1
+72d3e3be6ba1c8a8,2,contained,orange___haunglongbing_citrus_greening,color,72d3e3be6ba1c8a8 2029d178723172e1,1,1,1
+7343bb1bbf1aaaf0,2,label_conflict,raspberry___healthy | soybean___healthy,color,98a18788825db69e 7343bb1bbf1aaaf0,2,1,1
+737ccc44c9230c19,2,contained,soybean___healthy,color,737ccc44c9230c19 82249e9a78120085,1,1,1
+73a821ef9ca83668,2,contained,tomato___late_blight,color,73a821ef9ca83668 b36b77cb3fbaf826,1,1,0
+74100d71c6d33563,2,label_conflict,pepper_bell___healthy | tomato___bacterial_spot,color,74100d71c6d33563 9f35f177e3de1d34,2,1,1
+75679569bb0c0cfa,2,label_conflict,soybean___healthy | tomato___early_blight,color,75679569bb0c0cfa 77fecbd3e80b8038,2,1,1
+768bbde97efc24f3,2,label_conflict,cherry_including_sour___healthy | soybean___healthy,color,d889dff02b860978 768bbde97efc24f3,2,1,1
+77add0d1c40acdb0,2,contained,soybean___healthy,color,77add0d1c40acdb0 a7c25e2370988f1f,1,1,1
+782f9b40b33307f5,2,contained,pepper_bell___healthy,color,18e2c9bea804c6cb 782f9b40b33307f5,1,1,1
+7c132d8facf1e46d,2,contained,soybean___healthy,color,7c132d8facf1e46d 60887ab7eb73383e,1,1,1
+7ccb74eb99aa0a5c,2,contained,cherry_including_sour___healthy,color,7ccb74eb99aa0a5c 6fc785be6461c4a9,1,1,1
+7df7d64837571629,2,label_conflict,apple___healthy | soybean___healthy,color,8b15a466dbca2b03 7df7d64837571629,2,1,1
+7e3e071281d204a9,2,contained,tomato___spider_mites_two_spotted_spider_mite,color,7e3e071281d204a9 527e3ba37164387c,1,1,1
+7e9bea66ccaeda11,2,contained,tomato___late_blight,color,4a4f368c15beb783 7e9bea66ccaeda11,1,1,1
+7f0f2cbc39a98eaa,2,label_conflict,apple___apple_scab | blueberry___healthy,color,7f0f2cbc39a98eaa af826ec171c27798,2,1,1
+7f8a1d4043910b63,2,label_conflict,orange___haunglongbing_citrus_greening | soybean___healthy,color,52102d085e26b3a5 7f8a1d4043910b63,2,1,1
+806fbbb94a0531af,2,contained,raspberry___healthy,color,ed49344decda3206 806fbbb94a0531af,1,1,1
+80aca46d7454ce5c,2,contained,soybean___healthy,color,80aca46d7454ce5c 3f2718a9c2dba7be,1,1,1
+818314d701b13c9b,2,contained,soybean___healthy,color,e5176e71b72eca27 818314d701b13c9b,1,1,1
+82bbe5db123a3ee0,2,contained,tomato___tomato_yellow_leaf_curl_virus,color,82bbe5db123a3ee0 dbd5254e5df9fd4f,1,1,1
+840fe4f13cab78ff,2,contained,corn_maize___healthy,color,840fe4f13cab78ff 31884d176b7eb1c8,1,1,1
+84d313fc9db200e0,2,contained,soybean___healthy,color,09badba30137f809 84d313fc9db200e0,1,1,1
+852a0f180ed63b99,2,contained,soybean___healthy,color,483efed5f473a971 852a0f180ed63b99,1,1,1
+86d293feaadafbcd,2,contained,tomato___late_blight,color,86d293feaadafbcd 891c7ddc2745872c,1,1,1
+87da72c8f92b2487,2,contained,orange___haunglongbing_citrus_greening,color,ae60ab5a8473cb41 87da72c8f92b2487,1,1,1
+87fcb3201d561e83,2,contained,orange___haunglongbing_citrus_greening,color,87fcb3201d561e83 8bada24edc85a4f4,1,1,1
+896dafc4d3a4fb21,2,contained,pepper_bell___healthy,color,896dafc4d3a4fb21 d0090d799d4f8b8e,1,1,1
+8a0fab89e6eba730,2,contained,tomato___healthy,color,8a0fab89e6eba730 6c790ef9ce585ef7,1,1,1
+8a5a9c88b357b66d,2,contained,soybean___healthy,color,8a5a9c88b357b66d 5327dc23e7a7f17a,1,1,1
+8a6037b33631f725,2,contained,soybean___healthy,color,8a6037b33631f725 7d171888a4b19acf,1,1,1
+8ac7706c89a63a2e,2,contained,apple___black_rot,color,95ab1bed559ddb4f 8ac7706c89a63a2e,1,1,1
+8b18aa5b8e481d74,2,contained,soybean___healthy,color,8b18aa5b8e481d74 f6c80539dff4fd16,1,1,1
+8bd745bbfb2f94fd,2,contained,soybean___healthy,color,f7f219ecfeaa7699 8bd745bbfb2f94fd,1,1,1
+8bfdf4d0ddca2cb2,2,contained,apple___apple_scab,color,8bfdf4d0ddca2cb2 b32ba5ed5b1febfe,1,1,1
+8d0647dbdc40afe5,2,contained,orange___haunglongbing_citrus_greening,color,915d39a366db02a8 8d0647dbdc40afe5,1,1,0
+8d3022b335e2e4fe,2,label_conflict,soybean___healthy | tomato___early_blight,color,8d3022b335e2e4fe ba2d37cfab7cf5d9,2,1,1
+8ee6edbe2061debf,2,contained,tomato___bacterial_spot,color,8ee6edbe2061debf 962ec615ccb41a5b,1,1,1
+8f610c9fc062066c,2,contained,tomato___healthy,color,dc23bfb29c542608 8f610c9fc062066c,1,1,1
+8fbb7b078618108a,2,label_conflict,pepper_bell___healthy | soybean___healthy,color,3844bd54a1902ff9 8fbb7b078618108a,2,1,1
+90090806e724263f,2,contained,apple___healthy,color,90090806e724263f 6f25cb3491db3158,1,1,1
+913f25c7687c5358,2,contained,soybean___healthy,color,78a848de2cb396cb 913f25c7687c5358,1,1,1
+91b50488b0e04eb5,2,contained,soybean___healthy,color,5245a0d55223f242 91b50488b0e04eb5,1,1,1
+91f15e043f73b09d,2,contained,tomato___tomato_yellow_leaf_curl_virus,color,f2447974ee0a5eed 91f15e043f73b09d,1,1,1
+92cd8fc864d4de2a,2,label_conflict,blueberry___healthy | soybean___healthy,color,92cd8fc864d4de2a 2fa8529e7e7d39f4,2,1,1
+92eba9a4337c92bd,2,contained,soybean___healthy,color,92eba9a4337c92bd d5e82a72b912c8d0,1,1,1
+92f5f25da029dcee,2,contained,strawberry___healthy,color,92f5f25da029dcee 329f848551572235,1,1,1
+947f52f99ab246c5,2,contained,soybean___healthy,color,3d99e97a28e6e62b 947f52f99ab246c5,1,1,1
+9480363211b44530,2,contained,cherry_including_sour___powdery_mildew,color,9480363211b44530 55f8d2e90ec90fed,1,1,1
+96139cab2acf9e64,2,contained,soybean___healthy,color,96139cab2acf9e64 b42a65839d372f16,1,1,1
+965031edb5fdf106,2,contained,grape___healthy,color,965031edb5fdf106 39fa41d92b48aeff,1,1,1
+977b6cefa387e2c0,2,label_conflict,soybean___healthy | tomato___bacterial_spot,color,977b6cefa387e2c0 5166123d450e0e37,2,1,1
+97f63b87241ce169,2,contained,tomato___late_blight,color,97f63b87241ce169 c049ac9367021e0b,1,1,1
+9827b7f18f1039c8,2,contained,tomato___tomato_yellow_leaf_curl_virus,color,9827b7f18f1039c8 21fca40859e931cb,1,1,1
+990b02d2fad144a9,2,label_conflict,orange___haunglongbing_citrus_greening | potato___healthy,color,990b02d2fad144a9 47897d32bb6745f8,2,1,1
+99ff0a88ccd480e3,2,contained,orange___haunglongbing_citrus_greening,color,0953da5d4f774f7d 99ff0a88ccd480e3,1,1,1
+9a6556627b1b8054,2,contained,raspberry___healthy,color,9a6556627b1b8054 a8631f508066eb79,1,1,1
+9ae3ddad91e66b22,2,contained,raspberry___healthy,color,d7ef1bbba75177fa 9ae3ddad91e66b22,1,1,1
+9b85b29b75673e32,2,contained,soybean___healthy,color,a936447d6cc187ec 9b85b29b75673e32,1,1,1
+9bad42218626fe5b,2,contained,soybean___healthy,color,9bad42218626fe5b e9d5766386538275,1,1,1
+9cb3040f5adf5414,2,contained,soybean___healthy,color,ea9d59933fed3ca3 9cb3040f5adf5414,1,1,1
+9d217f9b6b8f13ec,2,contained,soybean___healthy,color,9d217f9b6b8f13ec d6e262e791365a70,1,1,1
+9d639100ebd0bbbf,2,label_conflict,cherry_including_sour___healthy | soybean___healthy,color,dae9990699321a3b 9d639100ebd0bbbf,2,1,1
+9dfafbff0c69b3e1,2,label_conflict,pepper_bell___healthy | soybean___healthy,color,9dfafbff0c69b3e1 02c3de8fe2307a2b,2,1,1
+9e6563934eecb12c,2,contained,raspberry___healthy,color,9e6563934eecb12c 70ef7eb0c4c1f9b6,1,1,1
+9ecbe25349fd8faa,2,contained,pepper_bell___healthy,color,9ecbe25349fd8faa 65d4eaf5a9036218,1,1,1
+9efd56ab662a0306,2,label_conflict,raspberry___healthy | soybean___healthy,color,9efd56ab662a0306 da7c07866326a47a,2,1,1
+9f1e375864ed7760,2,contained,raspberry___healthy,color,4d205bb1247543ef 9f1e375864ed7760,1,1,1
+a1ecc458346c62c8,2,label_conflict,peach___bacterial_spot | tomato___early_blight,color,b0817e59d91a4a17 a1ecc458346c62c8,2,1,1
+a34d3372f722f46d,2,contained,soybean___healthy,color,ab7f94aca91069a8 a34d3372f722f46d,1,1,1
+a4b52a012f0efa46,2,label_conflict,raspberry___healthy | soybean___healthy,color,a4b52a012f0efa46 6acb89a96e6c1f9b,2,1,1
+a4d79f665e642da9,2,contained,soybean___healthy,color,802b651b584787ec a4d79f665e642da9,1,1,1
+a558c826b29c9f9e,2,contained,apple___healthy,color,a558c826b29c9f9e bcfd1cb4175746a8,1,1,1
+a5ffe4b096b5109a,2,contained,soybean___healthy,color,d96a8a3d53b3789f a5ffe4b096b5109a,1,1,1
+a64dd1d1bc8159f4,2,contained,soybean___healthy,color,a64dd1d1bc8159f4 bbb55278af7d723e,1,1,1
+a6858bfde5903e60,2,contained,soybean___healthy,color,a6858bfde5903e60 490412f2c0e6fb10,1,1,1
+a796cbc00b3ed29d,2,contained,soybean___healthy,color,a796cbc00b3ed29d 16bb7f2f6107d19b,1,1,1
+a8886f198b7cfabd,2,label_conflict,potato___late_blight | soybean___healthy,color,070e96916a0edc66 a8886f198b7cfabd,2,1,1
+a8c9cb54d7e867eb,2,contained,tomato___late_blight,color,d4c7db84f2b0a058 a8c9cb54d7e867eb,1,1,1
+a925cb365ebe1b9d,2,contained,pepper_bell___healthy,color,a11a09ae8c4c35a7 a925cb365ebe1b9d,1,1,1
+a9de0a9d990cec7f,2,contained,cherry_including_sour___powdery_mildew,color,a9de0a9d990cec7f dbea33952a0c8a73,1,1,1
+aa08d9bf5a1291db,2,contained,apple___black_rot,color,54cbff538643d216 aa08d9bf5a1291db,1,1,1
+aa1d16a849965b03,2,contained,tomato___healthy,color,aa1d16a849965b03 29564648f1a8fb45,1,1,1
+aaf355f735beec43,2,contained,soybean___healthy,color,aaf355f735beec43 57ca30ce534deb3b,1,1,1
+ab4215ca19d32762,2,contained,soybean___healthy,color,ab4215ca19d32762 8cee2567ae420197,1,1,1
+abdcce9da3224bb7,2,contained,potato___early_blight,color,abdcce9da3224bb7 aa6c18c5a35715a5,1,1,1
+ac6ed5c5706651aa,2,contained,soybean___healthy,color,ac6ed5c5706651aa 28ad1ee4b2577dc1,1,1,1
+ac7c3bfeb4d6c4a5,2,contained,grape___esca_black_measles,color,ac7c3bfeb4d6c4a5 5a7fdc7d62770e7f,1,1,1
+ad383808a10bc578,2,contained,blueberry___healthy,color,9c81506a149051d6 ad383808a10bc578,1,1,1
+ad64eafa4834bc4e,2,contained,tomato___healthy,color,ad64eafa4834bc4e dce6242df42bf38f,1,1,1
+ae89f696e49de30c,2,label_conflict,tomato___target_spot | tomato___tomato_yellow_leaf_curl_virus,color,b2f40c29e507ec7f ae89f696e49de30c,2,1,1
+aecfcaa5950c57ff,2,contained,soybean___healthy,color,aecfcaa5950c57ff be2999e25b06866f,1,1,1
+b110999381899875,2,contained,cherry_including_sour___powdery_mildew,color,be05dc64542ab963 b110999381899875,1,1,1
+b166a7593c713b44,2,contained,orange___haunglongbing_citrus_greening,color,36ed8dd3d2d8e9b7 b166a7593c713b44,1,1,1
+b2b5492d77306e5b,2,label_conflict,raspberry___healthy | soybean___healthy,color,d682b3900101009f b2b5492d77306e5b,2,1,1
+b2c9e3808e60f9a2,2,contained,strawberry___healthy,color,fb1e94757a40d586 b2c9e3808e60f9a2,1,1,1
+b416ef2574935ae1,2,contained,soybean___healthy,color,b416ef2574935ae1 71011e7618ee168f,1,1,1
+b4ce509a2646ff2a,2,label_conflict,grape___esca_black_measles | pepper_bell___healthy,color,9fdfd3b81a5ddbbe b4ce509a2646ff2a,2,1,1
+b53046a6df33f681,2,contained,tomato___tomato_yellow_leaf_curl_virus,color,71b71e3f5275ac67 b53046a6df33f681,1,1,1
+b54ef08de1819ca4,2,contained,orange___haunglongbing_citrus_greening,color,b54ef08de1819ca4 212da3f27d50d901,1,1,1
+b585dc2bb627b5ef,2,contained,tomato___tomato_yellow_leaf_curl_virus,color,b585dc2bb627b5ef 3cf458b968aa7767,1,1,1
+b629a362dee74733,2,contained,apple___healthy,color,b629a362dee74733 44e1d4d4b4ef94aa,1,1,1
+b6519d3896c35848,2,contained,soybean___healthy,color,b6519d3896c35848 1eccf65444740c2e,1,1,1
+b698e7ab7394e255,2,label_conflict,pepper_bell___healthy | soybean___healthy,color,b698e7ab7394e255 1e9e3281c5c37b9e,2,1,1
+b6af7f9b21604104,2,contained,apple___healthy,color,b6af7f9b21604104 fda1e23cc947c4ff,1,1,1
+b6d69018f8605e4e,2,contained,soybean___healthy,color,b6d69018f8605e4e b517bc58f2b3a3f3,1,1,1
+b724b36e1b62c505,2,contained,soybean___healthy,color,a3f3aa3214c350a8 b724b36e1b62c505,1,1,1
+b818090396d20f8e,2,contained,tomato___tomato_yellow_leaf_curl_virus,color,c4f17de76f87d8ea b818090396d20f8e,1,1,0
+b8d8d5296af3023b,2,contained,blueberry___healthy,color,3606b7a05acdab73 b8d8d5296af3023b,1,1,1
+b9891d792c5a3e2e,2,contained,soybean___healthy,color,b9891d792c5a3e2e d60487a00179c5b3,1,1,1
+ba3fa78a8cec6dae,2,contained,tomato___tomato_yellow_leaf_curl_virus,color,49c3b227714dd80c ba3fa78a8cec6dae,1,1,1
+bb8d394f1634922a,2,contained,tomato___tomato_yellow_leaf_curl_virus,color,2fdc83666cf1adac bb8d394f1634922a,1,1,1
+bbdd718fd0e4c889,2,contained,soybean___healthy,color,bbdd718fd0e4c889 01263fea82b4ba3c,1,1,1
+bc182c0bf0419810,2,contained,cherry_including_sour___powdery_mildew,color,bc182c0bf0419810 8ad859505c69b2a1,1,1,1
+bd8a0c5f69c89aae,2,contained,orange___haunglongbing_citrus_greening,color,88000a97da8f0453 bd8a0c5f69c89aae,1,1,1
+bf5c1e6625d1d786,2,label_conflict,raspberry___healthy | soybean___healthy,color,a7227a49fc193938 bf5c1e6625d1d786,2,1,1
+bfa1934b9d2c1eea,2,contained,soybean___healthy,color,bfa1934b9d2c1eea 084a96a6e0fddcf9,1,1,1
+bff6c84567f4cfbe,2,contained,tomato___tomato_yellow_leaf_curl_virus,color,45189189a6f7675a bff6c84567f4cfbe,1,1,1
+c090eb305284eb00,2,contained,tomato___healthy,color,945c955e5ef91429 c090eb305284eb00,1,1,1
+c130a6451af6d6c6,2,contained,soybean___healthy,color,c130a6451af6d6c6 49e218c3b264996f,1,1,1
+c1c432508d4fb71e,2,contained,tomato___tomato_yellow_leaf_curl_virus,color,626b2fd933754926 c1c432508d4fb71e,1,1,1
+c1f36e75eaaf0f4b,2,contained,soybean___healthy,color,e5a822a825b45dd4 c1f36e75eaaf0f4b,1,1,1
+c2097693a19dc90d,2,label_conflict,soybean___healthy | tomato___leaf_mold,color,c2097693a19dc90d 2247ba5f9ade2124,2,1,1
+c220c1f55573d997,2,contained,orange___haunglongbing_citrus_greening,color,4fbd6375c99321d0 c220c1f55573d997,1,1,0
+c2377453f64e7d52,2,label_conflict,orange___haunglongbing_citrus_greening | tomato___bacterial_spot,color,19009089be9bae29 c2377453f64e7d52,2,1,1
+c265671029c135c1,2,contained,corn_maize___healthy,color,c5560173d407a70d c265671029c135c1,1,1,1
+c31f79f9c61291bb,2,contained,squash___powdery_mildew,color,c31f79f9c61291bb 84fcbc013d73d4b2,1,1,1
+c332e656047cf9c4,2,contained,soybean___healthy,color,25dd70d1d78d3781 c332e656047cf9c4,1,1,1
+c4135f475e555f3a,2,contained,cherry_including_sour___healthy,color,178a65663a39f097 c4135f475e555f3a,1,1,1
+c4d64d758bc9f806,2,contained,orange___haunglongbing_citrus_greening,color,242f028210684167 c4d64d758bc9f806,1,1,0
+c533b7eb23158565,2,label_conflict,tomato___bacterial_spot | tomato___tomato_yellow_leaf_curl_virus,color,c533b7eb23158565 4ca8d27d9c159287,2,1,1
+c66bddf4d43f0abc,2,contained,soybean___healthy,color,03c1bde566080a11 c66bddf4d43f0abc,1,1,1
+c77fb7a488aa40b6,2,contained,soybean___healthy,color,c77fb7a488aa40b6 7c8af9d0319e79fa,1,1,1
+c7b17ca0f895c006,2,contained,tomato___spider_mites_two_spotted_spider_mite,color,01356e6f5327817e c7b17ca0f895c006,1,1,1
+c8bd12bd92e759d4,2,contained,orange___haunglongbing_citrus_greening,color,1f54cf6e8deabddf c8bd12bd92e759d4,1,1,1
+c8d83d445c822d7d,2,label_conflict,raspberry___healthy | soybean___healthy,color,8314dffa60456e19 c8d83d445c822d7d,2,1,1
+c97e6c86abd78032,2,contained,soybean___healthy,color,1cb84da13f6612f0 c97e6c86abd78032,1,1,1
+c9c5f768aaeef462,2,contained,corn_maize___northern_leaf_blight,color,c9c5f768aaeef462 dd61f41ad7a94d45,1,1,1
+ca6ea21fbe6feac1,2,contained,grape___esca_black_measles,color,ca6ea21fbe6feac1 721226e296037d13,1,1,1
+ca96980ec565996e,2,contained,orange___haunglongbing_citrus_greening,color,13789d2519e70237 ca96980ec565996e,1,1,1
+cc68e6c74c10c7da,2,label_conflict,cherry_including_sour___healthy | soybean___healthy,color,e60945a5c53c6ebd cc68e6c74c10c7da,2,1,1
+cd2ee4a697881f07,2,label_conflict,pepper_bell___healthy | soybean___healthy,color,cd2ee4a697881f07 f36c395dfba2db6d,2,1,1
+cd5111b39cd5bf12,2,contained,tomato___tomato_yellow_leaf_curl_virus,color,4f96d957fb6928d0 cd5111b39cd5bf12,1,1,0
+ce069228f45ead51,2,contained,blueberry___healthy,color,ce069228f45ead51 daa979294154b65b,1,1,1
+ce3c240bcb85073a,2,label_conflict,pepper_bell___bacterial_spot | raspberry___healthy,color,9e676de6e3b7be9a ce3c240bcb85073a,2,1,1
+d088f22e0b584a88,2,contained,soybean___healthy,color,2a8d2a52c9ea474b d088f22e0b584a88,1,1,1
+d0bdfab7e0711c2e,2,contained,cherry_including_sour___powdery_mildew,color,d0bdfab7e0711c2e 32a40c448b75439d,1,1,1
+d19e28c82b176234,2,contained,soybean___healthy,color,d19e28c82b176234 98c9bce61a29b662,1,1,1
+d212bf4542d01a3d,2,contained,tomato___bacterial_spot,color,d212bf4542d01a3d 016c5941fbc80c41,1,1,1
+d28caa236f89c08a,2,contained,tomato___spider_mites_two_spotted_spider_mite,color,7f19309e071bb1be d28caa236f89c08a,1,1,1
+d2980dffda0de2a5,2,contained,soybean___healthy,color,d2980dffda0de2a5 9699a167b2846deb,1,1,1
+d2e5eee234cc6f00,2,label_conflict,soybean___healthy | tomato___bacterial_spot,color,9054b4ab2f083e31 d2e5eee234cc6f00,2,1,1
+d3450c7be6fc98f3,2,contained,soybean___healthy,color,bc996052885ac60c d3450c7be6fc98f3,1,1,1
+d3d0cf132fa5fce0,2,contained,soybean___healthy,color,d3d0cf132fa5fce0 f7a32ee8f51bc4c6,1,1,1
+d484eba6efdaa2d4,2,contained,tomato___tomato_yellow_leaf_curl_virus,color,d484eba6efdaa2d4 475a5b81f896c80c,1,1,0
+d4d5319adc47e9d8,2,contained,soybean___healthy,color,8253257302f0461e d4d5319adc47e9d8,1,1,1
+d52a78b83f9e92db,2,contained,tomato___tomato_yellow_leaf_curl_virus,color,314470089f58293e d52a78b83f9e92db,1,1,1
+d53fb31fcaae5952,2,contained,tomato___healthy,color,d53fb31fcaae5952 dbd0bfd257c41e10,1,1,1
+d6f04caced40c78a,2,label_conflict,potato___early_blight | soybean___healthy,color,1908d748ef63d507 d6f04caced40c78a,2,1,1
+d86d73a2793269f9,2,contained,pepper_bell___healthy,color,3256da1ef0b4a78c d86d73a2793269f9,1,1,1
+d9674e5aa4b39060,2,label_conflict,tomato___spider_mites_two_spotted_spider_mite | tomato___target_spot,color,d9674e5aa4b39060 6f034fc0815fd9ec,2,1,1
+d9b95fba50ad86a2,2,contained,orange___haunglongbing_citrus_greening,color,d9b95fba50ad86a2 2c8a33541e0e79d3,1,1,0
+dab8993626da8d19,2,contained,soybean___healthy,color,094b8b03a377c8c8 dab8993626da8d19,1,1,1
+dab8e0dc7ad6def3,2,contained,soybean___healthy,color,dab8e0dc7ad6def3 1d7351a24296c098,1,1,1
+db2efa43de7eed6c,2,contained,soybean___healthy,color,db2efa43de7eed6c 249865d6ecda6d13,1,1,1
+dc4e4b17731c0bc7,2,contained,soybean___healthy,color,dc4e4b17731c0bc7 79c4d0dfc7264388,1,1,1
+dcc2b5f0861c0de1,2,contained,tomato___bacterial_spot,color,15a8a0bb3fa23dd1 dcc2b5f0861c0de1,1,1,1
+dcccdc593de85d59,2,contained,orange___haunglongbing_citrus_greening,color,53c33d3dd144bf21 dcccdc593de85d59,1,1,0
+dd04364b2b48b243,2,contained,potato___early_blight,color,dd04364b2b48b243 a45c0327be41de70,1,1,1
+de3465ccb54c7373,2,contained,soybean___healthy,color,de3465ccb54c7373 41d68d8dc301c0e0,1,1,1
+dee420585ae37820,2,contained,soybean___healthy,color,dee420585ae37820 6f624a5fdb6e97f7,1,1,1
+df137313ed30ee6a,2,contained,soybean___healthy,color,0df39a1af95053cc df137313ed30ee6a,1,1,1
+dfa8755a0b0eabf0,2,label_conflict,cherry_including_sour___healthy | tomato___septoria_leaf_spot,color,daa0fda4efcdbaf0 dfa8755a0b0eabf0,2,1,1
+e08831c529db34f8,2,label_conflict,apple___healthy | cherry_including_sour___healthy,color,e08831c529db34f8 ef462a05be72419d,2,1,1
+e0f9b1bcc895e94d,2,contained,cherry_including_sour___powdery_mildew,color,739c7de695e6d5bf e0f9b1bcc895e94d,1,1,0
+e156429c2309a5c7,2,contained,pepper_bell___healthy,color,ba8ebdd79af1a439 e156429c2309a5c7,1,1,1
+e171d0090510292a,2,label_conflict,raspberry___healthy | soybean___healthy,color,497ee805b52ecd31 e171d0090510292a,2,1,1
+e30d379ad83395da,2,contained,soybean___healthy,color,4ce2a2c20d6aae37 e30d379ad83395da,1,1,1
+e413a0a638d51754,2,contained,tomato___late_blight,color,e413a0a638d51754 a24db2014825da4c,1,1,1
+e4256e5ae7a756d7,2,contained,soybean___healthy,color,e4256e5ae7a756d7 738c74579e8bb509,1,1,1
+e4f6ed7548921564,2,label_conflict,orange___haunglongbing_citrus_greening | soybean___healthy,color,1c6027ce7728ab02 e4f6ed7548921564,2,1,1
+e5220390397e624b,2,contained,orange___haunglongbing_citrus_greening,color,faa9a8c7a1602540 e5220390397e624b,1,1,0
+e5377f9c6a2690f8,2,contained,soybean___healthy,color,fcea171d86caad89 e5377f9c6a2690f8,1,1,1
+e5c916d17999be1f,2,label_conflict,orange___haunglongbing_citrus_greening | tomato___bacterial_spot,color,26b68a67aa17f8d2 e5c916d17999be1f,2,1,1
+e6de83c48ab8553b,2,label_conflict,raspberry___healthy | soybean___healthy,color,e6de83c48ab8553b 2169727f7eca9527,2,1,1
+e6e05c512988e08c,2,label_conflict,raspberry___healthy | soybean___healthy,color,e6e05c512988e08c 0c77ce643ef54441,2,1,1
+e720df297256c791,2,label_conflict,raspberry___healthy | soybean___healthy,color,37d9f2208dc589aa e720df297256c791,2,1,1
+ea281fa29fe0e559,2,contained,pepper_bell___healthy,color,ea281fa29fe0e559 f694672473d1d1d3,1,1,1
+eb76bd3ee8cfcd8f,2,contained,strawberry___leaf_scorch,color,eb76bd3ee8cfcd8f 74526f1e6df9b5d9,1,1,1
+ecfcf67132a39e3a,2,contained,soybean___healthy,color,ecfcf67132a39e3a c7990efaea893b16,1,1,1
+ed4757eb54a832cf,2,contained,tomato___tomato_yellow_leaf_curl_virus,color,842c511b39b50a10 ed4757eb54a832cf,1,1,0
+edb190b9a904f9cd,2,label_conflict,apple___healthy | potato___late_blight,color,edb190b9a904f9cd e28c7fbc6619c200,2,1,1
+ee5116b15ec338c7,2,contained,apple___healthy,color,ee5116b15ec338c7 474bd23e96af0444,1,1,1
+ee81f7c8b0b90a8d,2,label_conflict,soybean___healthy | tomato___early_blight,color,ee81f7c8b0b90a8d 96bd1d6fd8a02800,2,1,1
+eef41859a012300b,2,contained,cherry_including_sour___healthy,color,87f95e6066578ebe eef41859a012300b,1,1,1
+efb9d77b1c979d7e,2,label_conflict,pepper_bell___bacterial_spot | soybean___healthy,color,cc2b638e2b2d1c1a efb9d77b1c979d7e,2,1,1
+f01094f45f2cef49,2,label_conflict,soybean___healthy | tomato___bacterial_spot,color,f01094f45f2cef49 2459f74e4b4a8a2a,2,1,1
+f02097fa51418a9f,2,label_conflict,pepper_bell___bacterial_spot | soybean___healthy,color,b87d40c776ec3697 f02097fa51418a9f,2,1,1
+f0e7d5e2a1d2a395,2,label_conflict,soybean___healthy | tomato___bacterial_spot,color,f0e7d5e2a1d2a395 0c9f628c9b2da155,2,1,1
+f0fc514fcca5f73d,2,label_conflict,raspberry___healthy | soybean___healthy,color,d42d3e37ffb77ad0 f0fc514fcca5f73d,2,1,1
+f11d13f764b4c908,2,contained,tomato___tomato_yellow_leaf_curl_virus,color,18b4f2648e9c43af f11d13f764b4c908,1,1,1
+f1ca96064cce66b9,2,contained,blueberry___healthy,color,7ea7087f1b41048e f1ca96064cce66b9,1,1,1
+f2275084049118e5,2,contained,soybean___healthy,color,5f40f69e466fd985 f2275084049118e5,1,1,1
+f29597711d997eaa,2,contained,cherry_including_sour___powdery_mildew,color,93b1b7615153af59 f29597711d997eaa,1,1,0
+f30320cbec590672,2,contained,soybean___healthy,color,036eb405789cdf86 f30320cbec590672,1,1,1
+f397e083b3181c46,2,contained,cherry_including_sour___healthy,color,f397e083b3181c46 4903249f7fedc0d1,1,1,1
+f3e1e07c2edb58db,2,label_conflict,raspberry___healthy | soybean___healthy,color,771372c50bf11b74 f3e1e07c2edb58db,2,1,1
+f51eef9ce3bbb630,2,contained,orange___haunglongbing_citrus_greening,color,f51eef9ce3bbb630 0432f60148d9a779,1,1,1
+f6013311bc984666,2,contained,soybean___healthy,color,f6013311bc984666 0df24cb007429b04,1,1,1
+f70f14ba44ae6a24,2,label_conflict,orange___haunglongbing_citrus_greening | soybean___healthy,color,eaec97c10c8291b2 f70f14ba44ae6a24,2,1,1
+f72ead064d81c6a9,2,label_conflict,potato___late_blight | soybean___healthy,color,6cda97dab7e6cca6 f72ead064d81c6a9,2,1,1
+f764bc31b3ac77fd,2,contained,soybean___healthy,color,f764bc31b3ac77fd 8bfb04514ee83470,1,1,1
+f80738ee5924f3fa,2,contained,tomato___late_blight,color,cadf702afb83d59c f80738ee5924f3fa,1,1,0
+f8c93b2723d6a4f8,2,contained,orange___haunglongbing_citrus_greening,color,e4cafd979572b0d7 f8c93b2723d6a4f8,1,1,1
+f9867311c41e45d8,2,label_conflict,soybean___healthy | tomato___tomato_yellow_leaf_curl_virus,color,f9867311c41e45d8 9a65387284b899e6,2,1,1
+f9babdeaa0015599,2,contained,soybean___healthy,color,54b94d51c1e05878 f9babdeaa0015599,1,1,1
+f9d8a7f65227df1e,2,contained,cherry_including_sour___powdery_mildew,color,f9d8a7f65227df1e 7474ad1ea1097f8f,1,1,0
+fa09c5d5583ed2a4,2,label_conflict,tomato___healthy | tomato___target_spot,color,a2e8a56b17f78667 fa09c5d5583ed2a4,2,1,1
+fb427af7796b527a,2,contained,soybean___healthy,color,fb427af7796b527a 58f96700d2ceab03,1,1,1
+fb5da7198359461e,2,contained,pepper_bell___healthy,color,12d3e2d3ae888b7d fb5da7198359461e,1,1,1
+fcff641e0d58bd9b,2,label_conflict,soybean___healthy | tomato___bacterial_spot,color,fcff641e0d58bd9b 585240859942394a,2,1,1
+fd17d6fdaa0d6877,2,contained,pepper_bell___healthy,color,fd17d6fdaa0d6877 ab8699be22c3e70c,1,1,1
+fdd1cbbe47c6a76b,2,contained,orange___haunglongbing_citrus_greening,color,fdd1cbbe47c6a76b bace457ef181d799,1,1,1
+fe3bdc849d72cbd7,2,label_conflict,tomato___spider_mites_two_spotted_spider_mite | tomato___target_spot,color,10e77b83af06f4b6 fe3bdc849d72cbd7,2,1,1
+fe4dd2e4fa44ae66,2,contained,soybean___healthy,color,8fb48e57f5a8b593 fe4dd2e4fa44ae66,1,1,1
+fef1d87c7136340d,2,contained,apple___healthy,color,fef1d87c7136340d 2e87a204b4fe36e7,1,1,1
+ff90354718f57b3f,2,contained,tomato___healthy,color,ff90354718f57b3f 26960581ede8d0fd,1,1,1
